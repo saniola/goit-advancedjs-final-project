@@ -1,0 +1,1 @@
+{"version":3,"file":"commonHelpers.js","sources":["../src/ts/main.ts"],"sourcesContent":["document.addEventListener('DOMContentLoaded', () => {\n  console.log('Hello World!');\n});\n"],"names":[],"mappings":"ssBAAA,SAAS,iBAAiB,mBAAoB,IAAM,CAClD,QAAQ,IAAI,cAAc,CAC5B,CAAC"}
