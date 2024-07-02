@@ -20,6 +20,6 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/js/fetch-and-set-quote.js", "src/js/fetch-quote.js", "src/js/get-current-date.js", "src/js/main.js"],
   "exclude": ["node_modules"]
 }

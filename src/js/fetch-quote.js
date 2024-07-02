@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { constants } from './constants';
-import type { Quote } from './types';
 
-export async function fetchQuote(): Promise<Quote> {
+export async function fetchQuote() {
   const { data } = await axios({
     method: 'get',
     url: `${constants.domen}/quote`,

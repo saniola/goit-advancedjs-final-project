@@ -1,7 +1,7 @@
 import { fetchQuote } from './fetch-quote';
 import { getCurrentDate } from './get-current-date';
 
-function setQuote(author: string, quote: string): void {
+function setQuote(author, quote) {
   const quoteText = document.querySelector('.quote .text');
   const quoteAuthor = document.querySelector('.quote .author');
 
@@ -11,7 +11,7 @@ function setQuote(author: string, quote: string): void {
   }
 }
 
-export async function fetchAndSetQuote(): Promise<void> {
+export async function fetchAndSetQuote() {
   const savedQuote = localStorage.getItem('quote');
   const currentDate = getCurrentDate();
 
