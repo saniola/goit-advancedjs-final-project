@@ -32,7 +32,9 @@ body {
 .pagination .active {
   border: 1px solid var(--primary-dark-color);
   color: var(--primary-dark-color);
+  cursor: auto;
   height: 32px;
+  pointer-events: none;
   width: 32px;
 }
 
