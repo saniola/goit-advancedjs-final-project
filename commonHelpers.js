@@ -49,13 +49,13 @@ import{a as f}from"./assets/vendor-bdb8a163.js";(function(){const o=document.cre
                     <button class="modal-exercise-info" type="button" id="${n}">
                         <span>Start</span>
                         <svg class="icon-arrow" width="16" height="16">
-                            <use href="./img/icons.svg#icon-arrow"></use>
+                            <use href="./images/icons.svg#icon-arrow"></use>
                         </svg>
                     </button>
                 </div>
                 <div class="exercises-title">
                     <svg class="run-icon" width="24" height="24">
-                        <use href="./img/icons.svg#icon-run"></use>
+                        <use href="./images/icons.svg#icon-run"></use>
                     </svg>
                     <p class="exercises-name">${r}</p>
                 </div>
@@ -77,11 +77,11 @@ import{a as f}from"./assets/vendor-bdb8a163.js";(function(){const o=document.cre
         </div>`).join("");function h(t=null){return t||t===0?`<div class="exercises-ratio">
       <p class="ratio-value">${j(t)}</p>
       <svg class="ratio-star" width="18" height="18">
-          <use href="./img/icons.svg#icon-star"></use>
+          <use href="./images/icons.svg#icon-star"></use>
       </svg>
       </div>`:`<button class="trash-btn js-delete-favorite" type="button">
     <svg class="trash-icon" width="16" height="16">
-        <use href="./img/icons.svg#icon-trash"></use>
+        <use href="./images/icons.svg#icon-trash"></use>
     </svg>
     </button>`}function j(t){return t%1?`${Math.round(t*10)/10}`:`${t}.0`}async function m(t){const{category:o,...n}=t;let r="?";const s=document.querySelector(".content");for(const[x,S]of Object.entries(t))r+=`${x}=${S}&`;const{data:e}=await f({method:"get",url:`${g.domen}/exercises${r}limit=10`,responseType:"json"});s.innerHTML=T(e.results);const a=document.querySelector(".js-title"),c=document.querySelector(".js-title-slash");a.textContent=o,a.classList.remove("is-hide"),c.classList.remove("is-hide");const u=document.querySelector(".pagination");u.innerHTML="",e.totalPages>1&&p({params:n,totalPages:e==null?void 0:e.totalPages,method:m})}const $=document.querySelector(".form-search-exersises"),N=document.querySelector(".content");document.querySelector(".list-filter-exersises");const b="Muscles";let i=1,l="",d="";document.addEventListener("DOMContentLoaded",async()=>{const t=y;E(),O(t);const o=await t({filter:b,page:i});o>1&&p({params:{filter:b,page:i},totalPages:o,method:y})});$.addEventListener("submit",async t=>{t.preventDefault(),d=t.target.querySelector(".input-search-exersises").value;const n=document.querySelector(".btn-filter.active").dataset.exercise;await m({[n]:l,category:n,keyword:d,page:i})});N.addEventListener("click",async t=>{const o=t.target.closest(".category-wrap");if(!o)return;$.classList.remove("is-hide"),l=o.getAttribute("name");const n=document.querySelector(".btn-filter.active").dataset.exercise;await m({[n]:l,category:n,keyword:d,page:i})});
 //# sourceMappingURL=commonHelpers.js.map
