@@ -1,50 +1,50 @@
-import{a as f}from"./assets/vendor-bdb8a163.js";(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))r(s);new MutationObserver(s=>{for(const t of s)if(t.type==="childList")for(const i of t.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&r(i)}).observe(document,{childList:!0,subtree:!0});function n(s){const t={};return s.integrity&&(t.integrity=s.integrity),s.referrerPolicy&&(t.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?t.credentials="include":s.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function r(s){if(s.ep)return;s.ep=!0;const t=n(s);fetch(s.href,t)}})();function w({params:e,pagination:o,method:n}){const r=Array.from(o.querySelectorAll(".button"));let s=1;r.forEach(t=>{t.addEventListener("click",i=>{t.classList.contains("active")||(s=t.dataset.page,n({...e,page:s}),r.forEach(a=>a.classList.remove("active")),t.classList.add("active"))})})}function p({params:e,totalPages:o,method:n}){const r=document.querySelector(".pagination");let s="";const t=parseInt(e.page);if(o<=1){r.innerHTML="";return}t>3&&(s+=`
-      <button class="button${t==1?" active":""}" data-page="1">
+import{a as f}from"./assets/vendor-bdb8a163.js";(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))r(s);new MutationObserver(s=>{for(const e of s)if(e.type==="childList")for(const a of e.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&r(a)}).observe(document,{childList:!0,subtree:!0});function n(s){const e={};return s.integrity&&(e.integrity=s.integrity),s.referrerPolicy&&(e.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?e.credentials="include":s.crossOrigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function r(s){if(s.ep)return;s.ep=!0;const e=n(s);fetch(s.href,e)}})();function L({params:t,pagination:o,method:n}){const r=Array.from(o.querySelectorAll(".button"));let s=1;r.forEach(e=>{e.addEventListener("click",a=>{e.classList.contains("active")||(s=e.dataset.page,n({...t,page:s}),r.forEach(c=>c.classList.remove("active")),e.classList.add("active"))})})}function p({params:t,totalPages:o,method:n}){const r=document.querySelector(".pagination");let s="";const e=parseInt(t.page);if(o<=1){r.innerHTML="";return}e>3&&(s+=`
+      <button class="button${e==1?" active":""}" data-page="1">
         1
       </button>
-    `),t-3>1&&(s+=`
+    `),e-3>1&&(s+=`
         <button class="button" data-page="1" disabled>
           ...
         </button>
-      `),t>2&&(s+=`
-      <button class="button" data-page="${t-2}">
-        ${t-2}
+      `),e>2&&(s+=`
+      <button class="button" data-page="${e-2}">
+        ${e-2}
       </button>
-    `),t>1&&(s+=`
-      <button class="button" data-page="${t-1}">
-        ${t-1}
+    `),e>1&&(s+=`
+      <button class="button" data-page="${e-1}">
+        ${e-1}
       </button>
     `),s+=`
-      <button class="button active" data-page="${t}">
-        ${t}
+      <button class="button active" data-page="${e}">
+        ${e}
       </button>
-    `,t+1<=o&&(s+=`
-      <button class="button" data-page="${t+1}">
-        ${t+1}
+    `,e+1<=o&&(s+=`
+      <button class="button" data-page="${e+1}">
+        ${e+1}
       </button>
-    `),t+2<=o&&(s+=`
-      <button class="button" data-page="${t+2}">
-        ${t+2}
+    `),e+2<=o&&(s+=`
+      <button class="button" data-page="${e+2}">
+        ${e+2}
       </button>
-    `),t+3<=o&&(s+=`
+    `),e+3<=o&&(s+=`
         <button class="button" data-page="1" disabled>
           ...
         </button>
       `,s+=`
-      <button class="button${o==t?" active":""}" data-page="${o}">
+      <button class="button${o==e?" active":""}" data-page="${o}">
         ${o}
       </button>
-    `),r.innerHTML=s,w({params:e,pagination:r,method:n})}const g={domen:"https://your-energy.b.goit.study/api"};async function E(){const{data:e}=await f({method:"get",url:`${g.domen}/quote`,responseType:"json"});return e}function M(){const e=new Date,o=String(e.getDate()).padStart(2,"0"),n=String(e.getMonth()+1).padStart(2,"0"),r=e.getFullYear();return`${o}/${n}/${r}`}function v(e,o){const n=document.querySelector(".quote .text"),r=document.querySelector(".quote .author");n&&r&&(r.innerHTML=e,n.innerHTML=o)}async function O(){const e=localStorage.getItem("quote"),o=M();if(!e||JSON.parse(e).currentDate!==o){const{author:s,quote:t}=await E();v(s,t),localStorage.setItem("quote",JSON.stringify({currentDate:o,author:s,quote:t}));return}const{author:n,quote:r}=JSON.parse(e);v(n,r)}const T=e=>e.map(({filter:o="Not found",name:n="Not found",imgURL:r})=>`<div class="category-wrap" name="${n}">
+    `),r.innerHTML=s,L({params:t,pagination:r,method:n})}const g={domen:"https://your-energy.b.goit.study/api"};async function q(){const{data:t}=await f({method:"get",url:`${g.domen}/quote`,responseType:"json"});return t}function w(){const t=new Date,o=String(t.getDate()).padStart(2,"0"),n=String(t.getMonth()+1).padStart(2,"0"),r=t.getFullYear();return`${o}/${n}/${r}`}function v(t,o){const n=document.querySelector(".quote .text"),r=document.querySelector(".quote .author");n&&r&&(r.innerHTML=t,n.innerHTML=o)}async function E(){const t=localStorage.getItem("quote"),o=w();if(!t||JSON.parse(t).currentDate!==o){const{author:s,quote:e}=await q();v(s,e),localStorage.setItem("quote",JSON.stringify({currentDate:o,author:s,quote:e}));return}const{author:n,quote:r}=JSON.parse(t);v(n,r)}const M=t=>t.map(({filter:o="Not found",name:n="Not found",imgURL:r})=>`<div class="category-wrap" name="${n}">
       <img class="category-img" src="${r}" alt="${n}">
       <div class="category-text-wrap">
           <p class="category-title">${n}</p>
           <p class="category-subtitle">${o}</p>
       </div>
-  </div>`).join("");async function y(e){let o="?";const n=document.querySelector(".content");for(const[s,t]of Object.entries(e))o+=`${s}=${t}&`;const{data:r}=await f({method:"get",url:`${g.domen}/filters${o}limit=12`,responseType:"json"});return n.innerHTML=T(r.results),r.totalPages}async function j(e){const o=Array.from(document.querySelectorAll(".btn-filter"));o.forEach(n=>{n.addEventListener("click",async()=>{if(!n.classList.contains("active")){o.forEach(s=>s.classList.remove("active")),n.classList.add("active");const r=await e({filter:n.dataset.category.replace(" ","+"),page:1});p({params:{filter:n.dataset.category.replace(" ","+"),page:1},totalPages:r,method:e})}})})}const N=(e,o=!1)=>e.length===0?'<p class="not-found-message">No results found.</p>':e.map(({_id:n,name:r,burnedCalories:s,rating:t,target:i,time:a,bodyPart:c})=>`<div class="exercises-container">
+  </div>`).join("");async function y(t){let o="?";const n=document.querySelector(".content");for(const[s,e]of Object.entries(t))o+=`${s}=${e}&`;const{data:r}=await f({method:"get",url:`${g.domen}/filters${o}limit=12`,responseType:"json"});return n.innerHTML=M(r.results),r.totalPages}async function O(t){const o=Array.from(document.querySelectorAll(".btn-filter"));o.forEach(n=>{n.addEventListener("click",async()=>{if(!n.classList.contains("active")){o.forEach(s=>s.classList.remove("active")),n.classList.add("active");const r=await t({filter:n.dataset.category.replace(" ","+"),page:1});p({params:{filter:n.dataset.category.replace(" ","+"),page:1},totalPages:r,method:t})}})})}const T=(t,o=!1)=>t.length===0?'<p class="not-found-message">No results found.</p>':t.map(({_id:n,name:r,burnedCalories:s,rating:e,target:a,time:c,bodyPart:u})=>`<div class="exercises-container">
                 <div class="exercises-header">
                     <div class="exercises-workout-ratio">
                         <div class="exercises-workout">WORKOUT</div>
-                        ${o?h():h(t)}
+                        ${o?h():h(e)}
                     </div>
                     <button class="modal-exercise-info" type="button" id="${n}">
                         <span>Start</span>
@@ -62,20 +62,20 @@ import{a as f}from"./assets/vendor-bdb8a163.js";(function(){const o=document.cre
                 <div class="exercises-info">
                     <div class="exercises-info-item">
                         <p class="exercises-info-title">Burned calories:</p>
-                        <p class="exercises-info-value burned-calories">${s} / ${a} min</p>
+                        <p class="exercises-info-value burned-calories">${s} / ${c} min</p>
                     </div>
                     <div class="exercises-info-item">
                         <p class="exercises-info-title">Body part:</p>
-                        <p class="exercises-info-value body-part">${c}</p>
+                        <p class="exercises-info-value body-part">${u}</p>
                     </div>
                     <div class="exercises-info-item">
                         <p class="exercises-info-title">Target:</p>
-                        <p class="exercises-info-value target">${i}</p>
+                        <p class="exercises-info-value target">${a}</p>
                     </div>
                 </div>
             </div>
-        </div>`).join("");function h(e=null){return e||e===0?`<div class="exercises-ratio">
-      <p class="ratio-value">${P(e)}</p>
+        </div>`).join("");function h(t=null){return t||t===0?`<div class="exercises-ratio">
+      <p class="ratio-value">${j(t)}</p>
       <svg class="ratio-star" width="18" height="18">
           <use href="./img/icons.svg#icon-star"></use>
       </svg>
@@ -83,5 +83,5 @@ import{a as f}from"./assets/vendor-bdb8a163.js";(function(){const o=document.cre
     <svg class="trash-icon" width="16" height="16">
         <use href="./img/icons.svg#icon-trash"></use>
     </svg>
-    </button>`}function P(e){return e%1?`${Math.round(e*10)/10}`:`${e}.0`}async function m(e){const{filter:o,muscles:n,keyword:r,page:s}=e;let t="?";const i=document.querySelector(".content");for(const[L,q]of Object.entries(e))t+=`${L}=${q}&`;const{data:a}=await f({method:"get",url:`${g.domen}/exercises${t}limit=10`,responseType:"json"});i.innerHTML=N(a.results);const c=document.querySelector(".js-title"),x=document.querySelector(".js-title-slash");c.textContent=n,c.classList.remove("is-hide"),x.classList.remove("is-hide");const S=document.querySelector(".pagination");S.innerHTML="",a.totalPages>1&&p({params:{filter:o,muscles:n,keyword:r,page:s},totalPages:a==null?void 0:a.totalPages,method:m})}const $=document.querySelector(".form-search-exersises"),k=document.querySelector(".content");document.querySelector(".list-filter-exersises");const b="Muscles";let u=1,l="",d="";document.addEventListener("DOMContentLoaded",async()=>{const e=y;O(),j(e);const o=await e({filter:b,page:u});o>1&&p({params:{filter:b,page:u},totalPages:o,method:y})});$.addEventListener("submit",async e=>{e.preventDefault(),d=e.target.querySelector(".input-search-exersises").value;const n=document.querySelector(".btn-filter.active").dataset.exercise;await m({[n]:l,keyword:d,page:u})});k.addEventListener("click",async e=>{const o=e.target.closest(".category-wrap");if(!o)return;$.classList.remove("is-hide"),l=o.getAttribute("name");const n=document.querySelector(".btn-filter.active").dataset.exercise;await m({[n]:l,keyword:d,page:u})});
+    </button>`}function j(t){return t%1?`${Math.round(t*10)/10}`:`${t}.0`}async function m(t){const{category:o,...n}=t;let r="?";const s=document.querySelector(".content");for(const[x,S]of Object.entries(t))r+=`${x}=${S}&`;const{data:e}=await f({method:"get",url:`${g.domen}/exercises${r}limit=10`,responseType:"json"});s.innerHTML=T(e.results);const a=document.querySelector(".js-title"),c=document.querySelector(".js-title-slash");a.textContent=o,a.classList.remove("is-hide"),c.classList.remove("is-hide");const u=document.querySelector(".pagination");u.innerHTML="",e.totalPages>1&&p({params:n,totalPages:e==null?void 0:e.totalPages,method:m})}const $=document.querySelector(".form-search-exersises"),N=document.querySelector(".content");document.querySelector(".list-filter-exersises");const b="Muscles";let i=1,l="",d="";document.addEventListener("DOMContentLoaded",async()=>{const t=y;E(),O(t);const o=await t({filter:b,page:i});o>1&&p({params:{filter:b,page:i},totalPages:o,method:y})});$.addEventListener("submit",async t=>{t.preventDefault(),d=t.target.querySelector(".input-search-exersises").value;const n=document.querySelector(".btn-filter.active").dataset.exercise;await m({[n]:l,category:n,keyword:d,page:i})});N.addEventListener("click",async t=>{const o=t.target.closest(".category-wrap");if(!o)return;$.classList.remove("is-hide"),l=o.getAttribute("name");const n=document.querySelector(".btn-filter.active").dataset.exercise;await m({[n]:l,category:n,keyword:d,page:i})});
 //# sourceMappingURL=commonHelpers.js.map
