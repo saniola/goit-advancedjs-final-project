@@ -4,8 +4,8 @@ html {
 
 body {
   background-color: var(--primary-light-color);
-  font-family: "DM Sans", sans-serif;
-  font-optical-sizing: auto;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
 }
 
 .container {
@@ -39,6 +39,29 @@ body {
   width: 32px;
 }
 
+.logo {
+  width: 132px;
+  height: 24px;
+}
+
+.social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  border-radius: 10px;
+  border: 1px solid rgba(244, 244, 244, 0.10);
+  display: inline-flex;
+  padding: 8px;
+  align-items: center;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+}
+
 @media screen and (min-width: 768px) {
     .container {
         padding-left: 32px;
@@ -54,5 +77,9 @@ body {
 
   body:not(.favorites) .main-layout {
     flex-direction: row-reverse;
+  }
+  
+  .container {
+      max-width: 1440px;
   }
 }
