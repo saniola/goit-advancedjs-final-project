@@ -66,3 +66,4 @@ content.addEventListener('click', async e => {
     page,
   });
 });
+}
