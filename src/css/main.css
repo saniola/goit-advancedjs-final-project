@@ -52,7 +52,7 @@ body {
     gap: 32px;
   }
 
-  body:not(.favourites) .main-layout {
+  body:not(.favorites) .main-layout {
     flex-direction: row-reverse;
   }
 }
