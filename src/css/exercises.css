@@ -209,6 +209,7 @@
 @media screen and (min-width: 768px) {
   .content-filter-container {
     gap: 32px;
+    padding-bottom: 32px;
   }
 
   .filter-title-container {
@@ -234,7 +235,6 @@
     justify-content: space-between;
     align-items: center;
     gap: 0;
-    padding-bottom: 32px;
   }
 
   .input-search-exersises {
@@ -269,6 +269,7 @@
     gap: 0;
     flex-wrap: nowrap;
     justify-content: space-between;
+    flex-direction: row;
   }
 
   .filter-title {
