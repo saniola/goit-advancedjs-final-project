@@ -1,3 +1,210 @@
-.daily-sports {
-  display: block; /* placeholder */
+.daily-sport-section {
+  display: grid;
+  grid-template-columns: auto; /* Два гибких столбца и один фиксированный */
+  grid-template-rows: auto auto auto; /* Две строки */
+  gap: 10px;
+  background: #F4F4F4;
+  
+}
+
+.quote {
+  border-radius: 20px;
+  background: #242424;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  order: 1;
+  grid-column: 1; /* Первый столбец */
+  grid-row: 1; /* Первая строка */
+}
+
+.quote-container
+ {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 18px;
+  flex-shrink: 0;
+  position: relative;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.icon-runner {
+  color:#F4F4F4;
+  background-color: rgba(244, 244, 244, 0.20);
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.icon-quotation {
+  color: #F4F4F4;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.icon-weight {
+  background-color: black;
+  color: #F4F4F4;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.quote-title {
+  color: #F4F4F4;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.quote-text {
+  margin-bottom: 16px;
+  color: rgba(244, 244, 244, 0.60);
+  font-family: "DM Sans";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.quote-author {
+  color: #F4F4F4;
+  font-family: "DM Sans";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.photo {
+  order: 2;
+  display: block;
+  grid-column: 1; /* Первый столбец */
+  grid-row: 2; /* Первая строка */
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.quote-img-mobile {
+  display: block;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+}
+
+.quote-img-mobile > img {
+  border-radius: 20px;
+  background: #FFF;
+}
+
+.daily-excercise {
+  border-radius: 20px;
+  background: #FFF;
+  width: 100%;
+  padding: 20px;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 16px;
+  order:3;
+  grid-column: 1; /* Первый столбец */
+  grid-row: 3; /* Первая строка */
+}
+
+.excercise-title {
+  color: #242424;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.excercise-sub {
+  color: rgba(36, 36, 36, 0.60);
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 16px;
+}
+
+.excercise-text {
+  color: #242424;
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; 
+  width: 245px;
+  position: relative;
+  max-height: 105px;
+  overflow: hidden;
+}
+
+.excercise-text:after {
+  content: '...';
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+  padding: 0 10px;
+}
+
+.quote-img-tab {
+  display: none;
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .daily-sport-section {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+
+  .quote {
+    grid-column: 1; /* Первый столбец */
+    grid-row: 1;
+    padding: 40px;
+  }
+
+  .photo {
+    grid-column: 2; /* Второй столбец */
+    grid-row: 1; /* Первая строка */
+    width: 288px;
+  }
+
+  .daily-excercise {
+    grid-column: 1; /* Первый столбец */
+    grid-row: 2;
+  }
+
+  .quote-title,
+  .excercise-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .quote-author {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .quote-img-mobile {
+    display: none;
+  }
+
+  .quote-img-tab {
+    display: block;
+    background-color: #FFFFFF;
+  }
+
+  .quote-img-tab > img {
+    border-radius: 20px;
+  }
+
+  .excercise-text {
+    width: 270px;
+  }
 }
