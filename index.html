@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Get Body in shape</title>
     
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,14 +14,14 @@
 
   
   <script type="module" crossorigin src="/goit-advancedjs-final-project/assets/vendor-bdb8a163.js"></script>
-  <script type="module" crossorigin src="/goit-advancedjs-final-project/assets/main-74f33049.js"></script>
-  <link rel="stylesheet" href="/goit-advancedjs-final-project/assets/main-817d0b89.css">
+  <script type="module" crossorigin src="/goit-advancedjs-final-project/assets/main-33957be7.js"></script>
+  <link rel="stylesheet" href="/goit-advancedjs-final-project/assets/main-53da261f.css">
 </head>
-<body>
+<body> <!-- Add class favorites here -->
   <section class="header">header</section>
 
 
-  <section class="home">
+  <main class="home">
     <section class="hero container">
   <div class="hero-text-container">
     <h1 class="hero-title">
@@ -67,7 +68,40 @@
 </section>
 
 
-    <!--
+    <div class="content-filter-container container">
+      <div class="filter-title-container">
+          <p class="filter-title">Exercises <span class="js-title-slash is-hide">/</span></p>
+          <p class="filter-subtitle"></p>
+      </div>
+      <div class="filter-block">
+          <form class="form-search-exersises is-hide" >
+              <input class="input-search-exersises" name="search" type="text" placeholder="Search">
+              </input>
+              <div class="btn-search-wrapper">
+                  <button class="btn-search-exersises is-hide js-clear-input" type="button">
+                      <svg class="icon-x" width="18" height="18">
+                          <use href="/img/icons.svg#icon-x"></use>
+                      </svg>
+                  </button>
+                  <button class="btn-search-exersises" type="submit">
+                      <svg class="icon-search" width="18" height="18">
+                          <use href="./img/icons.svg#icon-search"></use>
+                      </svg>
+                  </button>
+              </div>
+          </form>
+          
+          <ul class="list-filter-exersises">
+              <li class="item-filter-exersises"><button class="btn-filter active" data-category="Muscles" type="button">Muscles</button></li>
+              <li class="item-filter-exersises"><button class="btn-filter" data-category="Body parts" type="button">Body parts</button></li>
+              <li class="item-filter-exersises"><button class="btn-filter" data-category="Equipment" type="button">Equipment</button></li>
+          </ul>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="main-layout">
+        <!--
  Element: js-title-slash - remove class is-hide to show slash / in section title
  Element: form-search-exersises  - remove class is-hide to show form
  Element: js-clear-input - remove class is-hide to show X sign to clear input
@@ -113,8 +147,108 @@
 </section>
 
 
-    
-  </section>
+        <section class="daily-sport-section">
+  <div class="quote">
+    <div class="quote-container">
+      <span class="icon-runner circle-icon"></span>
+      <div>
+        <h3 class="quote-title">
+          Quote of the day
+          <span class="icon-quotation quotation-mark"></span>
+        </h3>
+        <p class="quote-text"></p>
+        <p class="quote-author"></p>
+      </div>
+    </div>
+  </div>
+  <picture class="photo quote-img-mobile">
+    <source
+      srcset="
+        ../assets/images/avif/quote-img-mob-2x.avif 2x,
+        ../assets/images/avif/quote-img-mob.avif    1x
+      "
+      type="image/avif"
+    />
+    <source
+      srcset="/goit-advancedjs-final-project/assets/quote-img-mob-2x-044712be.webp 2x, /goit-advancedjs-final-project/assets/quote-img-mob-d7efdb29.webp 1x"
+      type="image/webp"
+    />
+    <source
+      srcset="/goit-advancedjs-final-project/assets/quote-img-mob-2x-0f606e5a.jpg 2x, /goit-advancedjs-final-project/assets/quote-img-mob-1c67bec3.jpg 1x"
+      type="image/img"
+    />
+    <img src="../assets/images/jpg/quote-img-mob.jpg " loading="lazy" class="quote-img" />
+  </picture>
+
+  <picture class="photo quote-img-tab">
+    <source
+      srcset="/goit-advancedjs-final-project/assets/quote-img-tab-2x-382cd426.avif 2x, /goit-advancedjs-final-project/assets/quote-img-tab-b6710a53.avif 1x"
+      type="image/avif"
+    />
+    <source
+      srcset="/goit-advancedjs-final-project/assets/quote-img-tab-2x-471c1f3f.webp 2x, /goit-advancedjs-final-project/assets/quote-img-tab-d3afca77.webp 1x"
+      type="image/webp"
+    />
+    <source
+      srcset="/goit-advancedjs-final-project/assets/quote-img-tab-2x-e66d266e.jpg 2x, /goit-advancedjs-final-project/assets/quote-img-tab-5fc6c5db.jpg 1x"
+      type="image/img"
+    />
+    <img src="../assets/images/jpg/quote-img-tab.jpg " loading="lazy" class="quote-img" />
+  </picture>
+
+  <picture class="photo quote-img-desk">
+    <source
+      srcset="/goit-advancedjs-final-project/assets/quote-img-2x-8fa4a6a6.avif 2x, /goit-advancedjs-final-project/assets/quote-img-24cf403a.avif 1x"
+      type="image/avif"
+    />
+    <source
+      srcset="/goit-advancedjs-final-project/assets/quote-img-2x-2663514c.webp 2x, /goit-advancedjs-final-project/assets/quote-img-86ac6da5.webp 1x"
+      type="image/webp"
+    />
+    <source
+      srcset="/goit-advancedjs-final-project/assets/quote-img-2x-da4a8c2f.jpg 2x, /goit-advancedjs-final-project/assets/quote-img-35ac7e15.jpg 1x"
+      type="image/img"
+    />
+    <img src="../assets/images/jpg/quote-img.jpg " loading="lazy" class="quote-img" />
+  </picture>
+
+  <picture class="photo quote-img-favorite">
+    <source
+      srcset="/goit-advancedjs-final-project/assets/quote-img-fav-2x-31bd1f63.avif 2x, /goit-advancedjs-final-project/assets/quote-img-fav-7f0e171a.avif 1x"
+      type="image/avif"
+    />
+    <source
+      srcset="/goit-advancedjs-final-project/assets/quote-img-fav-2x-19319fa3.webp 2x, /goit-advancedjs-final-project/assets/quote-img-fav-4b7fc229.webp 1x"
+      type="image/webp"
+    />
+    <source
+      srcset="/goit-advancedjs-final-project/assets/quote-img-fav-2x-3233a0e6.jpg 2x, /goit-advancedjs-final-project/assets/quote-img-fav-0882300b.jpg 1x"
+      type="image/img"
+    />
+    <img src="../assets/images/jpg/quote-img-fav.jpg " loading="lazy" class="quote-img" />
+  </picture>
+
+  <div class="daily-excercise">
+    <span class="icon-weight circle-icon"></span>
+    <div>
+      <h3 class="excercise-title">110 min</h3>
+      <h3 class="excercise-sub">Daily norm of sports</h3>
+      <p class="excercise-text">
+        The World Health Organization recommends at least 150 minutes of
+        moderate-intensity aerobic physical activity throughout the week for
+        adults aged 18-64. However, what happens if we adjust that number to 110
+        minutes every day? While it might seem like a high number to hit,
+        dedicating 110 minutes daily to sporting activities may offer
+        unparalleled benefits to physical health, mental well-being, and overall
+        quality of life.
+      </p>
+    </div>
+  </div>
+</section>
+
+      </div>
+    </div>
+  </main>
 
   <footer class="footer">
   <section class="footer-container container">
