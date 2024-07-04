@@ -44,7 +44,7 @@ import{a as f}from"./assets/vendor-bdb8a163.js";(function(){const o=document.cre
                 <div class="exercises-header">
                     <div class="exercises-workout-ratio">
                         <div class="exercises-workout">WORKOUT</div>
-                        ${o?h():h(t)} 
+                        ${o?h():h(t)}
                     </div>
                     <button class="modal-exercise-info" type="button" id="${n}">
                         <span>Start</span>
@@ -78,7 +78,7 @@ import{a as f}from"./assets/vendor-bdb8a163.js";(function(){const o=document.cre
       <p class="ratio-value">${P(e)}</p>
       <svg class="ratio-star" width="18" height="18">
           <use href="./img/icons.svg#icon-star"></use>
-      </svg> 
+      </svg>
       </div>`:`<button class="trash-btn js-delete-favorite" type="button">
     <svg class="trash-icon" width="16" height="16">
         <use href="./img/icons.svg#icon-trash"></use>
