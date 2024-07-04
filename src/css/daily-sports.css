@@ -1,21 +1,18 @@
 .daily-sport-section {
   display: grid;
+  gap: 20px;
   grid-template-columns: auto;
   grid-template-rows: auto auto auto;
-  gap: 10px;
-  background: #f4f4f4;
+  background: var(--primary-light-color);
+  margin-top: 105px;
   width: 100%;
-  margin: 80px auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .quote {
   border-radius: 20px;
-  background: #242424;
+  background: var(--primary-dark-color);
   width: 100%;
   padding: 20px;
-  margin-bottom: 20px;
   order: 1;
   grid-column: 1;
   grid-row: 1;
@@ -28,52 +25,41 @@
   flex-shrink: 0;
   position: relative;
   width: 100%;
-  margin-bottom: 8px;
 }
 
-.icon-runner {
-  color: #f4f4f4;
+.circle-icon {
+  color: var(--primary-light-color);
   background-color: rgba(244, 244, 244, 0.2);
   padding: 8px;
   border-radius: 50%;
 }
 
-.icon-quotation {
-  color: #f4f4f4;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.icon-weight {
-  background-color: black;
-  color: #f4f4f4;
-  padding: 8px;
-  border-radius: 50%;
+.quotation-mark {
+  color: var(--primary-light-color);
+  font-size: 20px;
 }
 
 .quote-title {
-  color: #f4f4f4;
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: 'DM Sans';
+  align-items: center;
+  color: var(--primary-light-color);
+  display: flex;
   font-size: 20px;
-  font-style: normal;
   font-weight: 500;
   line-height: 20px;
+  justify-content: space-between;
   margin-bottom: 8px;
+  position: relative;
 }
 
 .quote-text {
   margin-bottom: 16px;
   color: rgba(244, 244, 244, 0.6);
-  font-family: 'DM Sans';
   font-size: 14px;
   line-height: 18px;
 }
 
 .quote-author {
-  color: #f4f4f4;
-  font-family: 'DM Sans';
+  color: var(--primary-light-color);
   font-size: 14px;
   line-height: 18px;
 }
@@ -81,26 +67,25 @@
 .photo {
   order: 2;
   display: block;
+  border-radius: 20px;
+  overflow: hidden;
   grid-column: 1;
   grid-row: 2;
-  margin-bottom: 20px;
-  border-radius: 20px;
 }
 
 .quote-img-mobile {
   display: block;
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 20px;
 }
 
-.quote-img-mobile > img {
-  border-radius: 20px;
-  background: #fff;
+.quote-img {
+  width: 100%;
 }
 
 .daily-excercise {
   border-radius: 20px;
-  background: #fff;
+  background: var(--white);
   width: 100%;
   height: 201px;
   padding: 20px;
@@ -112,34 +97,31 @@
   grid-row: 3; /* Первая строка */
 }
 
+.daily-excercise .circle-icon {
+  background-color: var(--primary-dark-color);
+}
+
 .excercise-title {
-  color: #242424;
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: 'DM Sans';
+  color: var(--primary-dark-color);
   font-size: 20px;
-  font-style: normal;
   font-weight: 500;
   line-height: 20px;
 }
 
 .excercise-sub {
   color: rgba(36, 36, 36, 0.6);
-  font-family: 'DM Sans';
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: 18px;
   margin-bottom: 16px;
 }
 
 .excercise-text {
-  color: #242424;
-  font-family: 'DM Sans';
+  color: var(--primary-dark-color);
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  height: 105px;
+  height: 95px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 5;
@@ -148,17 +130,18 @@
 }
 
 .quote-img-tab,
-.quote-img-desk {
+.quote-img-desk,
+.quote-img-favorite {
   display: none;
-  border-radius: 20px;
 }
 
 @media screen and (min-width: 768px) {
   .daily-sport-section {
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    gap: 16px;
+    column-gap: 16px;
+    row-gap: 32px;
+    margin-top: 64px;
   }
 
   .quote {
@@ -189,55 +172,49 @@
     line-height: 24px;
   }
 
+  .quote-img-tab {
+    display: block;
+  }
+
   .quote-img-mobile,
-  .quote-img-desk,
-  .favorite {
+  .quote-img-desk {
     display: none;
   }
 
-  .quote-img-tab {
-    display: block;
-    background-color: #ffffff;
-  }
-
-  .quote-img-tab > img {
-    border-radius: 20px;
+  .excercise-text {
+    height: 100px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .daily-sport-section {
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto;
-    gap: 32px;
+    align-content: start;
+    row-gap: 32px;
+    column-gap: 0;
+    margin-top: 0;
+    width: 444px;
   }
 
   .quote {
     grid-column: 1;
     grid-row: 1;
     padding: 40px;
-    width: 444px;
   }
 
   .photo {
     grid-column: 1;
     grid-row: 2;
-    width: 444px;
+    width: 100%;
   }
 
   .daily-excercise {
     grid-column: 1;
     grid-row: 3;
-    width: 444px;
-    height: 315px;
+    height: auto;
   }
 
   .quote-img-desk {
     display: block;
-  }
-
-  .quote-img-desk img {
-    border-radius: 20px;
   }
 
   .quote-img-mobile,
@@ -247,6 +224,6 @@
 
   .excercise-text {
     -webkit-line-clamp: 10;
-    height: 200px;
+    height: auto;
   }
 }
