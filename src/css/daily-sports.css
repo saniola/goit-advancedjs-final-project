@@ -93,8 +93,8 @@
   align-items: flex-start;
   gap: 16px;
   order: 3;
-  grid-column: 1; /* Первый столбец */
-  grid-row: 3; /* Первая строка */
+  grid-column: 1;
+  grid-row: 3;
 }
 
 .daily-excercise .circle-icon {
