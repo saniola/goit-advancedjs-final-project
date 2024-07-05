@@ -49,11 +49,11 @@ export async function fetchExercises(params) {
       });
     }
   } catch (error) {
-    showToast(
-      'error',
-      'Server error',
-      'Sorry, the exercises information was not retrieved from the server. Please refresh the page'
-    );
+    showToast({
+      type: 'error',
+      title: 'Server error',
+      message: 'Sorry, the exercises information was not retrieved from the server. Please refresh the page'
+  });
   } finally {
      loader.style.display = 'none';
   }
