@@ -51,7 +51,7 @@ body {
 
 .social-link {
   border-radius: 10px;
-  border: 1px solid rgba(244, 244, 244, 0.10);
+  border: 1px solid rgba(244, 244, 244, 0.1);
   display: inline-flex;
   padding: 8px;
   align-items: center;
@@ -63,10 +63,10 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-        padding-left: 32px;
-        padding-right: 32px;
-    }
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -78,8 +78,8 @@ body {
   body:not(.favorites) .main-layout {
     flex-direction: row-reverse;
   }
-  
+
   .container {
-      max-width: 1440px;
+    max-width: 1440px;
   }
 }
