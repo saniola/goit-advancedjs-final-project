@@ -217,8 +217,8 @@
 
 @media screen and (min-width: 768px) {
   .exercises-container {
-    max-width: calc((100% - 16px) / 2);
-    width: 100%;
+    max-width: 100%;
+    width: 344px;
   }
 
   .exercises-title {
@@ -240,8 +240,7 @@
 
 @media screen and (min-width: 1440px) {
   .exercises-container {
-    max-width: calc((100% - 16px) / 2);
-    width: 100%;
+    width: 442px;
   }
 
   .exercises-name {

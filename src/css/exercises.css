@@ -146,7 +146,6 @@
 
 .input-search-exersises:not(:placeholder-shown) + .btn-search-wrapper>.js-clear-input{
   opacity: 1;
-
 } 
 
 .btn-search-wrappe .icon-x {
