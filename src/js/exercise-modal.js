@@ -1,5 +1,5 @@
 import { fetchExercise } from './fetch-exercise';
-import { initFavoritesButtons } from './favorites';
+import { initFavoritesButtons } from './init-favorites-buttons';
 
 const modal = document.getElementById('exerciseModal');
 const closeButton = document.getElementById('closeButton');
