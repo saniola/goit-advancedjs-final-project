@@ -14,7 +14,6 @@ let catValue = '';
 let keyword = '';
 
 document.addEventListener('DOMContentLoaded', async () => {
-
   const method = fetchCategories;
   fetchAndSetQuote();
   // if (isExcercisesPage) {
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     filter,
     page,
   });
-
 
   if (totalPages > 1) {
     createPagination({
@@ -42,7 +40,8 @@ searchForm.addEventListener('submit', async e => {
   const input = e.target.querySelector('.input-search-exersises');
   keyword = input.value;
 
-  const category = document.querySelector('.btn-filter.active').dataset.exercise
+  const category =
+    document.querySelector('.btn-filter.active').dataset.exercise;
 
   const totalPages = await fetchExercises({
     [category]: catValue,
@@ -57,8 +56,9 @@ content.addEventListener('click', async e => {
   if (!item) return;
   searchForm.classList.remove('is-hide');
   catValue = item.getAttribute('name');
-  const category = document.querySelector('.btn-filter.active').dataset.exercise;
-  
+  const category =
+    document.querySelector('.btn-filter.active').dataset.exercise;
+
   const totalPages = await fetchExercises({
     [category]: catValue,
     category,
@@ -66,3 +66,6 @@ content.addEventListener('click', async e => {
     page,
   });
 });
+
+document.querySelector('.toggle-btn-home').classList.add('active');
+document.querySelector('.toggle-btn-favorites').classList.remove('active');
