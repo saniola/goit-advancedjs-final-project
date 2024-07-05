@@ -1,5 +1,5 @@
 .modal-overlay {
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -15,12 +15,12 @@
   flex-direction: column;
   z-index: 2;
   background: #242424;
-  left: 20px;
-  right: 20px;
   top: 50%;
-  transform: translateY(-50%);
-  max-width: calc(100% - 40px);
-  min-width: 335px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 335px;
+  min-width: 285px;
+  width: calc(100% - 40px);
   padding: 40px 20px;
   border-radius: 20px;
 }
@@ -45,6 +45,7 @@
 .exercise-image {
   opacity: 0.8;
   border-radius: 12px;
+  width: 100%;
   max-width: 295px;
 }
 
@@ -71,7 +72,7 @@
 
 .rating {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   height: 18px;
   gap: 2px;
 }
@@ -187,7 +188,6 @@
 /* Tablet start */
 
 @media screen and (min-width: 768px) {
-
   .modal-window {
     max-width: 704px;
     top: 50%;
@@ -206,7 +206,7 @@
 
   .exercise-wrapper {
     flex-direction: row;
-    align-items: flex-start
+    align-items: flex-start;
   }
 
   .exercise-image {
@@ -258,7 +258,6 @@
     width: 141px;
     height: 48px;
   }
-
 }
 
 /* Tablet end */
@@ -272,4 +271,3 @@
 .hidden {
   display: none;
 }
-
