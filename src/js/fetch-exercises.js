@@ -47,26 +47,6 @@ export async function fetchExercises(params) {
         totalPages: data?.totalPages,
         method: fetchExercises,
       });
-
-      content.innerHTML = createExerciseMarkup(data.results);
-
-      const titleExercise = document.querySelector('.js-title');
-      const titleExerciseSlash = document.querySelector('.js-title-slash');
-
-      titleExercise.textContent = category;
-      titleExercise.classList.remove('is-hide');
-      titleExerciseSlash.classList.remove('is-hide');
-
-      const pagination = document.querySelector('.pagination');
-      pagination.innerHTML = '';
-
-      if (data.totalPages > 1) {
-        createPagination({
-          params: searchparams,
-          totalPages: data?.totalPages,
-          method: fetchExercises,
-        });
-      }
     }
   } catch (error) {
     showToast(
