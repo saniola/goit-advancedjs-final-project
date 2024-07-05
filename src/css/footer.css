@@ -7,7 +7,7 @@
 }
 
 .footer .social-link {
-  transition: all 0.3s ease;
+  border: 1px solid rgba(244, 244, 244, 0.1);
 }
 
 .footer .social-icon {
@@ -16,7 +16,6 @@
 
 .footer .social-link:hover {
   background-color: var(--primary-light-color);
-
 
   .social-icon {
     fill: var(--primary-dark-color);
