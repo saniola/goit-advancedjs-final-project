@@ -11,7 +11,6 @@ import './handle-email-form';
 
 const searchForm = document.querySelector('.form-search-exersises');
 const content = document.querySelector('.content');
-const filterTabs = document.querySelector('.list-filter-exersises');
 const loader = document.querySelector('.loader-start');
 loader.style.display = 'block';
 
@@ -24,9 +23,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   loader.style.display = 'none';
 
   fetchAndSetQuote();
-  // if (isExcercisesPage) {
-  //   method = fetchExcercises;
-  // }
   handleFiltersClick(fetchCategories);
 
   const totalPages = await fetchCategories({
@@ -43,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-searchForm.addEventListener('submit', async e => {
+searchForm?.addEventListener('submit', async e => {
   e.preventDefault();
 
   const category = document.querySelector('.btn-filter.active').dataset.exercise;
@@ -57,7 +53,7 @@ searchForm.addEventListener('submit', async e => {
   attachExerciseModalListeners();
 });
 
-searchForm.addEventListener('reset', async e => {
+searchForm?.addEventListener('reset', async e => {
   e.preventDefault();
   e.target.querySelector('.input-search-exersises').value = '';
   await fetchExercises({
@@ -67,7 +63,7 @@ searchForm.addEventListener('reset', async e => {
   attachExerciseModalListeners();
 });
 
-content.addEventListener('click', async e => {
+content?.addEventListener('click', async e => {
   const item = e.target.closest('.category-wrap');
   if (!item) return;
   searchForm.classList.remove('is-hide');
