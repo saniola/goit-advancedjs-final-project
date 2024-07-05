@@ -3,8 +3,6 @@ import { initFavoritesButtons } from './favorites';
 
 const modal = document.getElementById('exerciseModal');
 const closeButton = document.getElementById('closeButton');
-const addFavoritesButton = document.getElementById('addFavoritesButton');
-const removeFavoritesButton = document.getElementById('removeFavoritesButton');
 
 export async function openModal(exerciseId) {
   let exerciseData;

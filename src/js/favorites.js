@@ -2,6 +2,8 @@ import { fetchFavorites } from './fetch-favorites';
 import { constants } from './constants';
 import { openModal } from './exercise-modal';
 
+const addFavoritesButton = document.getElementById('addFavoritesButton');
+const removeFavoritesButton = document.getElementById('removeFavoritesButton');
 
 export function initFavoritesButtons() {
   addFavoritesButton.addEventListener('click', addToFavorites);
