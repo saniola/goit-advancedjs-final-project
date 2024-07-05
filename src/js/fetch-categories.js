@@ -22,6 +22,7 @@ export async function fetchCategories(params) {
     return response.data.totalPages;
   } catch (error) {
     showToast(
+      'error',
       'Server error',
       'Sorry, the category information was not retrieved from the server. Please refresh the page'
     );

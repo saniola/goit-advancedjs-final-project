@@ -17,22 +17,15 @@ export async function openModal(exerciseId) {
 
 function renderModal(exerciseData) {
   document.querySelector('.exercise-header h2').textContent = exerciseData.name;
-  document.querySelector('.rating-value').textContent =
-    exerciseData.rating.toFixed(1);
+  document.querySelector('.rating-value').textContent = exerciseData.rating.toFixed(1);
   document.querySelector('.exercise-image').src = exerciseData.gifUrl;
   document.querySelector('.exercise-image').alt = exerciseData.name;
   document.querySelector('.target-value-js').innerHTML = exerciseData.target;
-  document.querySelector('.body-part-value-js').innerHTML =
-    exerciseData.bodyPart;
-  document.querySelector('.equipment-value-js').innerHTML =
-    exerciseData.equipment;
-  document.querySelector('.popularity-value-js').innerHTML =
-    exerciseData.popularity;
-  document.querySelector(
-    '.calories-value-js'
-  ).innerHTML = `${exerciseData.burnedCalories}/${exerciseData.time} min`;
-  document.querySelector('.exercise-description').textContent =
-    exerciseData.description;
+  document.querySelector('.body-part-value-js').innerHTML = exerciseData.bodyPart;
+  document.querySelector('.equipment-value-js').innerHTML = exerciseData.equipment;
+  document.querySelector('.popularity-value-js').innerHTML = exerciseData.popularity;
+  document.querySelector('.calories-value-js').innerHTML = `${exerciseData.burnedCalories}/${exerciseData.time} min`;
+  document.querySelector('.exercise-description').textContent = exerciseData.description;
   renderStars(exerciseData.rating);
   showModal();
 }

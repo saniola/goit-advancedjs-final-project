@@ -12,6 +12,7 @@ export async function fetchExercise(id) {
     return data;
   } catch (error) {
     showToast(
+      'error',
       'Server error',
       'Sorry, the exercise information was not retrieved from the server. Please refresh the page'
     );

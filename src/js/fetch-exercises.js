@@ -44,6 +44,7 @@ export async function fetchExercises(params) {
     }
   } catch (error) {
     showToast(
+      'error',
       'Server error',
       'Sorry, the exercises information was not retrieved from the server. Please refresh the page'
     );

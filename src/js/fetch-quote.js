@@ -13,6 +13,7 @@ export async function fetchQuote() {
     return data;
   } catch (error) {
     showToast(
+      'info',
       'Server error',
       'Sorry, today quote was not retrieved from the server. But previous one was pretty good'
     );
