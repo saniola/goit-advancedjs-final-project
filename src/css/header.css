@@ -29,15 +29,22 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.menu-toggle .line {
+  background-color: var(--primary-dark-color);
+  display: block;
+  height: 2px;
+}
+
+.menu-toggle .line:not(:last-child) {
+  margin-bottom: 3px;
 }
 
 .burger-icon {
   fill: var(--primary-dark-color);
-  width: 30px;
-  height: 30px;
   transition: all 0.3s ease;
 }
 
