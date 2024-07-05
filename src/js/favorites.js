@@ -1,4 +1,5 @@
 import { fetchFavorites } from './fetch-favorites';
+import { fetchAndSetQuote } from './fetch-and-set-quote';
 import { constants } from './constants';
 import { openModal } from './exercise-modal';
 
@@ -48,6 +49,7 @@ function showRemoveFavoritesButton() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  fetchAndSetQuote();
   fetchFavorites({ page: 1 });
 });
 
