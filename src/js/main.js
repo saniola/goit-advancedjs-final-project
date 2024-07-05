@@ -5,16 +5,22 @@ import { handleFiltersClick } from './handle-filters-click';
 import { fetchExercises } from './fetch-exercises';
 import { openModal } from './exercise-modal';
 
+import { setExerciseTitle } from './set-exercise-title';
+import './handle-email-form';
+
 const searchForm = document.querySelector('.form-search-exersises');
 const content = document.querySelector('.content');
 const filterTabs = document.querySelector('.list-filter-exersises');
+const loader = document.querySelector('.loader-start');
+loader.style.display = 'block';
 
 const filter = 'Muscles';
 let page = 1;
 let catValue = '';
-let keyword = '';
 
 document.addEventListener('DOMContentLoaded', async () => {
+  loader.style.display = 'none';
+
   const method = fetchCategories;
   fetchAndSetQuote();
   // if (isExcercisesPage) {
@@ -38,35 +44,30 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 searchForm.addEventListener('submit', async e => {
   e.preventDefault();
-  const input = e.target.querySelector('.input-search-exersises');
-  keyword = input.value;
 
-  const category =
-    document.querySelector('.btn-filter.active').dataset.exercise;
-
-  const totalPages = await fetchExercises({
-    [category]: catValue,
-    category,
-    keyword,
+  await fetchExercises({
+    value: catValue,
     page,
   });
+  attachExerciseModalListeners();
+});
+
+searchForm.addEventListener('reset', async e => {
+  e.preventDefault();
+  e.target.querySelector('.input-search-exersises').value = '';
 });
 
 content.addEventListener('click', async e => {
   const item = e.target.closest('.category-wrap');
   if (!item) return;
-  searchForm.classList.remove('is-hide');
-  catValue = item.getAttribute('name');
-  const category =
-    document.querySelector('.btn-filter.active').dataset.exercise;
 
-  const totalPages = await fetchExercises({
-    [category]: catValue,
-    category,
-    keyword,
+catValue = item.getAttribute('name');
+  setExerciseTitle(catValue);
+  await fetchExercises({
+    value: catValue,
     page,
   });
-   attachExerciseModalListeners()
+  attachExerciseModalListeners();
 });
 
 document.querySelector('.toggle-btn-home').classList.add('active');
@@ -74,7 +75,9 @@ document.querySelector('.toggle-btn-favorites').classList.remove('active');
 
 
 function attachExerciseModalListeners() {
-  const modalExerciseInfoButtons = document.querySelectorAll('.modal-exercise-info');
+  const modalExerciseInfoButtons = document.querySelectorAll(
+    '.modal-exercise-info'
+  );
   modalExerciseInfoButtons.forEach(button => {
     button.addEventListener('click', () => {
       openModal(button.id);
