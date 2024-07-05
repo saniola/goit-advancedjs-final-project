@@ -30,7 +30,7 @@
 .exercises-header {
   width: 100%;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 23px;
   row-gap: 8px;
 }
 
@@ -114,14 +114,19 @@
   text-overflow: ellipsis;
 }
 
-.exercises-title .circle-icon {
-  background-color: var(--primary-dark-color);
+.run-icon {
+  flex-shrink: 0;
+  padding: 4px;
+  background-color: var(--border-color);
+  border-radius: 50%;
+  fill: currentColor;
 }
 
 .exercises-name {
   color: var(--primary-dark-color);
   font-size: 20px;
-  line-height: 1;
+  padding-bottom: 2px;
+  line-height: 1.0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -213,8 +218,8 @@
 
 @media screen and (min-width: 768px) {
   .exercises-container {
-    max-width: calc((100% - 16px) / 2);
-    width: 100%;
+    max-width: 100%;
+    width: 344px;
   }
 
   .exercises-title {
@@ -236,8 +241,7 @@
 
 @media screen and (min-width: 1440px) {
   .exercises-container {
-    max-width: calc((100% - 16px) / 2);
-    width: 100%;
+    width: 442px;
   }
 
   .exercises-name {
