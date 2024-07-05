@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { constants } from './constants';
 import { createCategoryMarkup } from './category-card-markup';
+import { showToast } from './toast';
 
 export async function fetchCategories(params) {
   let filterParams = '?';
@@ -10,13 +11,19 @@ export async function fetchCategories(params) {
     filterParams += `${key}=${value}&`;
   }
 
-  const { data } = await axios({
-    method: 'get',
-    url: `${constants.domen}/filters${filterParams}limit=12`,
-    responseType: 'json',
-  });
+  try {
+    const response = await axios({
+      method: 'get',
+      url: `${constants.domen}/filters${filterParams}limit=12`,
+      responseType: 'json',
+    });
 
-  content.innerHTML = createCategoryMarkup(data.results);
-
-  return data.totalPages;
+    content.innerHTML = createCategoryMarkup(response.data.results);
+    return response.data.totalPages;
+  } catch (error) {
+    showToast(
+      'Server error',
+      'Sorry, the category information was not retrieved from the server. Please refresh the page'
+    );
+  }
 }
