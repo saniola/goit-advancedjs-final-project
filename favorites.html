@@ -1,22 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Favorites Exercises</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorites Exercises</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
     
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-  
-  
-  <script type="module" crossorigin src="/goit-advancedjs-final-project/assets/vendor-ae6d56ab.js"></script>
-  <script type="module" crossorigin src="/goit-advancedjs-final-project/assets/favorites-5e576ac8.js"></script>
-  <link rel="stylesheet" href="/goit-advancedjs-final-project/assets/vendor-e5212ee8.css">
-  <link rel="stylesheet" href="/goit-advancedjs-final-project/assets/favorites-2839b39f.css">
-</head>
-<body>
-  <header class="header">
+    <script type="module" crossorigin src="/goit-advancedjs-final-project/assets/vendor-ae6d56ab.js"></script>
+    <script type="module" crossorigin src="/goit-advancedjs-final-project/assets/favorites-5f4ae932.js"></script>
+    <link rel="stylesheet" href="/goit-advancedjs-final-project/assets/vendor-e5212ee8.css">
+    <link rel="stylesheet" href="/goit-advancedjs-final-project/assets/favorites-c9ff34c2.css">
+  </head>
+  <body>
+    <header class="header">
   <div class="container">
     <div class="header-wrapper">
       <a href="./index.html" class="header-logo">
@@ -25,80 +28,60 @@
         </svg>
       </a>
 
-      <button
-        class="menu-toggle js-open-menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        aria-label="Open menu"
-      >
+      <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
         <svg class="burger-icon" width="32" height="32">
           <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#icon-burger"></use>
         </svg>
       </button>
 
-        <nav class="nav">
-          <ul class="toggle-container">
-            <li class="toggle-btn toggle-btn-home active">
-              <a href="./index.html" class="nav-link toggle-btn-home">Home</a>
-            </li>
-            <li class="toggle-btn toggle-btn-favorites">
-              <a href="./favorites.html" class="nav-link toggle-btn-favorites"
-                >Favorites</a
-              >
-            </li>
-          </ul>
-        </nav>
-
-        <ul class="social">
-          <li class="social-link">
-            <a
-              href="https://www.facebook.com/goITclub/"
-              class="social-media"
-              target="_blank"
-            >
-              <svg class="social-icon" width="28" height="28">
-                <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#facebook"></use>
-              </svg>
-            </a>
+      <nav class="nav">
+        <ul class="toggle-container">
+          <li class="toggle-btn toggle-btn-home active">
+            <a href="./index.html" class="nav-link toggle-btn-home">Home</a>
           </li>
-          <li class="social-link">
-            <a
-              href="https://www.instagram.com/goitclub/ "
-              class="social-media"
-              target="_blank"
-            >
-              <svg class="social-icon" width="28" height="28">
-                <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#instagram"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="social-link">
-            <a
-              href="https://www.youtube.com/c/GoIT"
-              class="social-media"
-              target="_blank"
-            >
-              <svg class="social-icon" width="28" height="28">
-                <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#youtube"></use>
-              </svg>
-            </a>
+          <li class="toggle-btn toggle-btn-favorites">
+            <a href="./favorites.html" class="nav-link toggle-btn-favorites">Favorites</a>
           </li>
         </ul>
-      </div>
+      </nav>
+
+      <ul class="social">
+        <li class="social-link">
+          <a href="https://www.facebook.com/goITclub/" class="social-media" target="_blank">
+            <svg class="social-icon" width="28" height="28">
+              <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-link">
+          <a href="https://www.instagram.com/goitclub/ " class="social-media" target="_blank">
+            <svg class="social-icon" width="28" height="28">
+              <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-link">
+          <a href="https://www.youtube.com/c/GoIT" class="social-media" target="_blank">
+            <svg class="social-icon" width="28" height="28">
+              <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </header>
 
 
-  <section class="favorites">
-    <section class="exersises container">
+    <section class="favorites">
+      <section class="exersises container">
+  <div class="content"></div>
 
-    <div class="content"></div>
-
-    <div class="pagination"></div>
+  <div class="pagination"></div>
 </section>
-  </section>
 
-  
-</body>
+    </section>
+
+    
+  </body>
 </html>

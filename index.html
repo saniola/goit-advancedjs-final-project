@@ -15,12 +15,11 @@
   
   <script type="module" crossorigin src="/goit-advancedjs-final-project/commonHelpers2.js"></script>
   <link rel="modulepreload" crossorigin href="/goit-advancedjs-final-project/assets/vendor-ae6d56ab.js">
-  <link rel="modulepreload" crossorigin href="/goit-advancedjs-final-project/assets/favorites-5e576ac8.js">
-  <link rel="stylesheet" href="/goit-advancedjs-final-project/assets/favorites-2839b39f.css">
+  <link rel="modulepreload" crossorigin href="/goit-advancedjs-final-project/assets/favorites-5f4ae932.js">
+  <link rel="stylesheet" href="/goit-advancedjs-final-project/assets/favorites-c9ff34c2.css">
   <link rel="stylesheet" href="/goit-advancedjs-final-project/assets/vendor-e5212ee8.css">
 </head>
-<body> <!-- Add class favorites here -->
-
+<body>
   <header class="header">
   <div class="container">
     <div class="header-wrapper">
@@ -30,73 +29,52 @@
         </svg>
       </a>
 
-      <button
-        class="menu-toggle js-open-menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        aria-label="Open menu"
-      >
+      <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
         <svg class="burger-icon" width="32" height="32">
           <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#icon-burger"></use>
         </svg>
       </button>
 
-        <nav class="nav">
-          <ul class="toggle-container">
-            <li class="toggle-btn toggle-btn-home active">
-              <a href="./index.html" class="nav-link toggle-btn-home">Home</a>
-            </li>
-            <li class="toggle-btn toggle-btn-favorites">
-              <a href="./favorites.html" class="nav-link toggle-btn-favorites"
-                >Favorites</a
-              >
-            </li>
-          </ul>
-        </nav>
-
-        <ul class="social">
-          <li class="social-link">
-            <a
-              href="https://www.facebook.com/goITclub/"
-              class="social-media"
-              target="_blank"
-            >
-              <svg class="social-icon" width="28" height="28">
-                <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#facebook"></use>
-              </svg>
-            </a>
+      <nav class="nav">
+        <ul class="toggle-container">
+          <li class="toggle-btn toggle-btn-home active">
+            <a href="./index.html" class="nav-link toggle-btn-home">Home</a>
           </li>
-          <li class="social-link">
-            <a
-              href="https://www.instagram.com/goitclub/ "
-              class="social-media"
-              target="_blank"
-            >
-              <svg class="social-icon" width="28" height="28">
-                <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#instagram"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="social-link">
-            <a
-              href="https://www.youtube.com/c/GoIT"
-              class="social-media"
-              target="_blank"
-            >
-              <svg class="social-icon" width="28" height="28">
-                <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#youtube"></use>
-              </svg>
-            </a>
+          <li class="toggle-btn toggle-btn-favorites">
+            <a href="./favorites.html" class="nav-link toggle-btn-favorites">Favorites</a>
           </li>
         </ul>
-      </div>
+      </nav>
+
+      <ul class="social">
+        <li class="social-link">
+          <a href="https://www.facebook.com/goITclub/" class="social-media" target="_blank">
+            <svg class="social-icon" width="28" height="28">
+              <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-link">
+          <a href="https://www.instagram.com/goitclub/ " class="social-media" target="_blank">
+            <svg class="social-icon" width="28" height="28">
+              <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-link">
+          <a href="https://www.youtube.com/c/GoIT" class="social-media" target="_blank">
+            <svg class="social-icon" width="28" height="28">
+              <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </header>
 
-  <main class="home">
-    <div id="loader" class="loader-start"></div>
-    <section class="hero container">
+  <div id="loader" class="loader-start"></div>
+  <section class="hero container">
   <div class="hero-text-container">
     <h1 class="hero-title">
       <svg class="hero-icon" width="59" height="59">
@@ -105,8 +83,7 @@
       Get <span class="title-italic">Body</span> in <br />shape, Stay healthy
     </h1>
     <p class="hero-text">
-      Transform your physique and embrace a healthier lifestyle with our
-      comprehensive fitness and nutrition support.
+      Transform your physique and embrace a healthier lifestyle with our comprehensive fitness and nutrition support.
     </p>
   </div>
   <div class="hero-tags-container">
@@ -142,46 +119,43 @@
 </section>
 
 
-    <div class="content-filter-container container">
-      <div class="filter-title-container">
-          <p class="filter-title">Exercises <span class="js-title-slash is-hide">/</span><span class="js-title is-hide"></span></p>
-      </div>
-      <div class="filter-block">
-          <form class="form-search-exersises is-hide" >
-              <input class="input-search-exersises" name="search" type="text" placeholder="Search" autocomplete="off">
-              </input>
-              <div class="btn-search-wrapper">
-                  <button class="btn-search-exersises js-clear-input" type="reset">
-                      <span class="icon-x"></span>
-                  </button>
-                  <button class="btn-search-exersises" type="submit">
-                      <svg class="icon-search" width="18" height="18">
-                          <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#icon-search"></use>
-                      </svg>
-                  </button>
-              </div>
-          </form>
-
-          <ul class="list-filter-exersises">
-              <li class="item-filter-exersises"><button class="btn-filter active" data-category="Muscles" data-exercise="muscles" type="button">Muscles</button></li>
-              <li class="item-filter-exersises"><button class="btn-filter" data-category="Body parts" data-exercise="bodypart" type="button">Body parts</button></li>
-              <li class="item-filter-exersises"><button class="btn-filter" data-category="Equipment" data-exercise="equipment" type="button">Equipment</button></li>
-          </ul>
-      </div>
+  <div class="content-filter-container container">
+    <div class="filter-title-container">
+      <p class="filter-title">Exercises <span class="js-title-slash is-hide">/</span><span class="js-title is-hide"></span></p>
     </div>
+    <div class="filter-block">
+      <form class="form-search-exersises is-hide" >
+        <input class="input-search-exersises" name="search" type="text" placeholder="Search" autocomplete="off">
+        </input>
+        <div class="btn-search-wrapper">
+          <button class="btn-search-exersises js-clear-input" type="reset">
+            <span class="icon-x"></span>
+          </button>
+          <button class="btn-search-exersises" type="submit">
+            <svg class="icon-search" width="18" height="18">
+              <use href="/goit-advancedjs-final-project/assets/icons-a88260c8.svg#icon-search"></use>
+            </svg>
+          </button>
+        </div>
+      </form>
 
-    <div class="container">
-      <div class="main-layout">
+      <ul class="list-filter-exersises">
+        <li class="item-filter-exersises"><button class="btn-filter active" data-category="Muscles" data-exercise="muscles" type="button">Muscles</button></li>
+        <li class="item-filter-exersises"><button class="btn-filter" data-category="Body parts" data-exercise="bodypart" type="button">Body parts</button></li>
+        <li class="item-filter-exersises"><button class="btn-filter" data-category="Equipment" data-exercise="equipment" type="button">Equipment</button></li>
+      </ul>
+    </div>
+  </div>
 
-        <section class="exersises">
-  <p class="loader-text">
-    <span class="loader"> </span> Please wait. Data loading...
-  </p>
+  <div class="container">
+    <div class="main-layout">
+      <section class="exersises">
+  <p class="loader-text"><span class="loader"> </span> Please wait. Data loading...</p>
   <div class="content"></div>
   <div class="pagination"></div>
 </section>
 
-        <section class="daily-sport-section">
+      <section class="daily-sport-section">
   <div class="quote">
     <div class="quote-container">
       <span class="icon-runner circle-icon"></span>
@@ -236,10 +210,7 @@
       srcset="/goit-advancedjs-final-project/assets/quote-img-2x-2663514c.webp 2x, /goit-advancedjs-final-project/assets/quote-img-86ac6da5.webp 1x"
       type="image/webp"
     />
-    <source
-      srcset="/goit-advancedjs-final-project/assets/quote-img-2x-da4a8c2f.jpg 2x, /goit-advancedjs-final-project/assets/quote-img-35ac7e15.jpg 1x"
-      type="image/img"
-    />
+    <source srcset="/goit-advancedjs-final-project/assets/quote-img-2x-da4a8c2f.jpg 2x, /goit-advancedjs-final-project/assets/quote-img-35ac7e15.jpg 1x" type="image/img" />
     <img src="../assets/images/jpg/quote-img.jpg " loading="lazy" class="quote-img" />
   </picture>
 
@@ -265,21 +236,17 @@
       <h3 class="excercise-title">110 min</h3>
       <h3 class="excercise-sub">Daily norm of sports</h3>
       <p class="excercise-text">
-        The World Health Organization recommends at least 150 minutes of
-        moderate-intensity aerobic physical activity throughout the week for
-        adults aged 18-64. However, what happens if we adjust that number to 110
-        minutes every day? While it might seem like a high number to hit,
-        dedicating 110 minutes daily to sporting activities may offer
-        unparalleled benefits to physical health, mental well-being, and overall
-        quality of life.
+        The World Health Organization recommends at least 150 minutes of moderate-intensity aerobic physical activity
+        throughout the week for adults aged 18-64. However, what happens if we adjust that number to 110 minutes every
+        day? While it might seem like a high number to hit, dedicating 110 minutes daily to sporting activities may
+        offer unparalleled benefits to physical health, mental well-being, and overall quality of life.
       </p>
     </div>
   </div>
 </section>
 
-      </div>
     </div>
-  </main>
+  </div>
 
   <footer class="footer">
   <section class="footer-container container">
@@ -327,9 +294,7 @@
     <div class="footer-copyright">
       <p class="footer-copyright-item">Your Energy. All rights reserved.</p>
 
-      <p class="footer-copyright-item">
-        <a href="#">Privacy Policy</a>&nbsp;/&nbsp;<a href="#">Terms of Service</a>
-      </p>
+      <p class="footer-copyright-item"><a href="#">Privacy Policy</a>&nbsp;/&nbsp;<a href="#">Terms of Service</a></p>
 
       <p class="footer-copyright-item">&copy;2023</p>
     </div>
@@ -340,7 +305,7 @@
   <div class="modal-window">
     <span class="close-button icon-x" id="closeButton"></span>
     <div class="exercise-wrapper">
-      <img src="" alt="" class="exercise-image" loading="lazy">
+      <img src="" alt="" class="exercise-image" loading="lazy" />
       <div class="exercise-details">
         <div class="exercise-header">
           <h2></h2>
@@ -368,7 +333,7 @@
           </li>
           <li class="details-column">
             <div class="details-title">Popular</div>
-            <div class=" details-value popularity-value-js"></div>
+            <div class="details-value popularity-value-js"></div>
           </li>
           <li class="details-column">
             <div class="details-title">Burned Calories</div>
@@ -379,10 +344,12 @@
       </div>
     </div>
     <div class="modal-actions">
-      <button class="add-favorites-btn" id="addFavoritesButton">Add to favorites<span
-          class="icon-heart"></span></button>
-      <button class="remove-favorites-btn hidden" id="removeFavoritesButton">Remove from favorites<span
-          class="icon-trash"></span></button>
+      <button class="add-favorites-btn" id="addFavoritesButton">
+        Add to favorites<span class="icon-heart"></span>
+      </button>
+      <button class="remove-favorites-btn hidden" id="removeFavoritesButton">
+        Remove from favorites<span class="icon-trash"></span>
+      </button>
       <button class="give-rating-btn" id="addRatingButton">Give a rating</button>
     </div>
   </div>
