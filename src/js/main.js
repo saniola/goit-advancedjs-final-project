@@ -5,6 +5,7 @@ import { handleFiltersClick } from './handle-filters-click';
 import { fetchExercises } from './fetch-exercises';
 import { openModal } from './exercise-modal';
 import { initIconPathObserver } from './icon-path-updater';
+import { calcScrollValue } from './scroll-to-top';
 
 import { setExerciseTitle } from './set-exercise-title';
 import './handle-email-form';
@@ -12,6 +13,7 @@ import './handle-email-form';
 const searchForm = document.querySelector('.form-search-exersises');
 const content = document.querySelector('.content');
 const filterTabs = document.querySelector('.list-filter-exersises');
+const scrollProgress = document.querySelector('.scroll-to-top');
 
 const filter = 'Muscles';
 const page = 1;
@@ -93,3 +95,10 @@ function attachExerciseModalListeners() {
     });
   });
 }
+
+scrollProgress.addEventListener("click", () => {
+  document.documentElement.scrollTop = 0;
+});
+
+window.onscroll = calcScrollValue;
+window.onload = calcScrollValue;
