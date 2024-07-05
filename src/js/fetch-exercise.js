@@ -2,28 +2,22 @@ import axios from 'axios';
 import { constants } from './constants';
 import { showToast } from './toast';
 
-export async function fetchQuote() {
+export async function fetchExercise(id) {
   const loader = document.querySelector('.loader-text');
   loader.style.display = 'block';
   try {
     const { data } = await axios({
       method: 'get',
-      url: `${constants.domen}/quote`,
+      url: `${constants.domen}/exercises/${id}`,
       responseType: 'json',
     });
-
     return data;
   } catch (error) {
     showToast({
-      type: 'info',
+      type: 'error',
       title: 'Server error',
-      message: 'Sorry, today quote was not retrieved from the server. But previous one was pretty good'
-    });
-    return {
-      author: "Shaquille O'Neal",
-      quote:
-        'Excellence is not a singular act but a habit. You are what you do repeatedly.',
-    };
+      message: 'Sorry, the exercise information was not retrieved from the server. Please refresh the page'
+  });
   } finally {
     loader.style.display = 'none';
   }
