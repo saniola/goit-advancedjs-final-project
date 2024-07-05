@@ -2,9 +2,6 @@ import { fetchFavorites } from './fetch-favorites';
 import { constants } from './constants';
 import { openModal } from './exercise-modal';
 
-document.addEventListener('DOMContentLoaded', async () => {
-  fetchFavorites({ page: 1 });
-});
 
 export function initFavoritesButtons() {
   addFavoritesButton.addEventListener('click', addToFavorites);
@@ -47,3 +44,10 @@ function showRemoveFavoritesButton() {
   addFavoritesButton.classList.add('hidden');
   removeFavoritesButton.classList.remove('hidden');
 }
+
+document.addEventListener('DOMContentLoaded', async () => {
+  fetchFavorites({ page: 1 });
+});
+
+document.querySelector('.toggle-btn-home').classList.remove('active');
+document.querySelector('.toggle-btn-favorites').classList.add('active');
