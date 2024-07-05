@@ -5,12 +5,14 @@ import { handleFiltersClick } from './handle-filters-click';
 import { fetchExercises } from './fetch-exercises';
 import { initIconPathObserver } from './icon-path-updater';
 import { attachExerciseModalListeners } from './modal-listener';
+import { calcScrollValue } from './scroll-to-top';
 
 import { setExerciseTitle } from './set-exercise-title';
 import './handle-email-form';
 
 const searchForm = document.querySelector('.form-search-exersises');
 const content = document.querySelector('.content');
+const scrollProgress = document.querySelector('.scroll-to-top');
 
 const filter = 'Muscles';
 const page = 1;
@@ -40,11 +42,10 @@ searchForm?.addEventListener('submit', async e => {
   e.preventDefault();
 
   const category = document.querySelector('.btn-filter.active').dataset.exercise;
-
+  
   const totalPages = await fetchExercises({
     [category]: catValue,
     category,
-    keyword,
     page,
   });
   attachExerciseModalListeners();
@@ -82,3 +83,10 @@ content?.addEventListener('click', async e => {
 
 document.querySelector('.toggle-btn-home').classList.add('active');
 document.querySelector('.toggle-btn-favorites').classList.remove('active');
+
+scrollProgress.addEventListener("click", () => {
+  document.documentElement.scrollTop = 0;
+});
+
+window.onscroll = calcScrollValue;
+window.onload = calcScrollValue;
