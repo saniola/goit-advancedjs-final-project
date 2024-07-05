@@ -3,6 +3,8 @@ import { constants } from './constants';
 import { showToast } from './toast';
 
 export async function fetchQuote() {
+  const loader = document.querySelector('.loader-text');
+  loader.style.display = 'block';
   try {
     const { data } = await axios({
       method: 'get',
@@ -22,5 +24,7 @@ export async function fetchQuote() {
       quote:
         'Excellence is not a singular act but a habit. You are what you do repeatedly.',
     };
+  } finally {
+    loader.style.display = 'none';
   }
 }
