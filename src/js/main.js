@@ -3,6 +3,7 @@ import { fetchAndSetQuote } from './fetch-and-set-quote';
 import { fetchCategories } from './fetch-categories';
 import { handleFiltersClick } from './handle-filters-click';
 import { fetchExercises } from './fetch-exercises';
+import { openModal } from './exercise-modal';
 
 const searchForm = document.querySelector('.form-search-exersises');
 const content = document.querySelector('.content');
@@ -65,7 +66,18 @@ content.addEventListener('click', async e => {
     keyword,
     page,
   });
+   attachExerciseModalListeners()
 });
 
 document.querySelector('.toggle-btn-home').classList.add('active');
 document.querySelector('.toggle-btn-favorites').classList.remove('active');
+
+
+function attachExerciseModalListeners() {
+  const modalExerciseInfoButtons = document.querySelectorAll('.modal-exercise-info');
+  modalExerciseInfoButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      openModal(button.id);
+    });
+  });
+}
