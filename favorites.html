@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favorites Exercises</title>
+    <meta name="description" content="Get Body in shape. Favorites">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +16,7 @@
     
     <script type="module" crossorigin src="/goit-advancedjs-final-project/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-advancedjs-final-project/assets/vendor-ae6d56ab.js">
-    <link rel="modulepreload" crossorigin href="/goit-advancedjs-final-project/assets/mobile-menu-0252df87.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-final-project/assets/mobile-menu-b559b0ec.js">
     <link rel="stylesheet" href="/goit-advancedjs-final-project/assets/vendor-e5212ee8.css">
     <link rel="stylesheet" href="/goit-advancedjs-final-project/assets/mobile-menu-43b2daab.css">
   </head>
@@ -23,7 +24,7 @@
     <header class="header">
   <div class="container">
     <div class="header-wrapper">
-      <a href="./index.html">
+      <a href="./index.html" aria-label="logo">
         <svg class="header-logo" width="132" height="24">
           <use href="/goit-advancedjs-final-project/assets/icons-c00b452e.svg#logo"></use>
         </svg>
@@ -43,31 +44,31 @@
       <nav class="nav">
         <ul class="toggle-container">
           <li class="toggle-btn toggle-btn-home active">
-            <a href="./index.html" class="nav-link toggle-btn-home">Home</a>
+            <a href="./index.html" class="nav-link toggle-btn-home" aria-label="home button">Home</a>
           </li>
           <li class="toggle-btn toggle-btn-favorites">
-            <a href="./favorites.html" class="nav-link toggle-btn-favorites">Favorites</a>
+            <a href="./favorites.html" class="nav-link toggle-btn-favorites" aria-label="favorites button">Favorites</a>
           </li>
         </ul>
       </nav>
 
       <ul class="social">
   <li>
-    <a href="https://www.facebook.com/goITclub/" target="_blank" class="social-link">
+    <a href="https://www.facebook.com/goITclub/" target="_blank" class="social-link" aria-label="facebook">
       <svg class="social-icon" width="28" height="28">
         <use href="/goit-advancedjs-final-project/assets/icons-c00b452e.svg#facebook"></use>
       </svg>
     </a>
   </li>
   <li>
-    <a href="https://www.instagram.com/goitclub/ " target="_blank" class="social-link">
+    <a href="https://www.instagram.com/goitclub/ " target="_blank" class="social-link" aria-label="instagram">
       <svg class="social-icon" width="28" height="28">
         <use href="/goit-advancedjs-final-project/assets/icons-c00b452e.svg#instagram"></use>
       </svg>
     </a>
   </li>
   <li>
-    <a href="https://www.youtube.com/c/GoIT" target="_blank" class="social-link">
+    <a href="https://www.youtube.com/c/GoIT" target="_blank" class="social-link" aria-label="youtube">
       <svg class="social-icon" width="28" height="28">
         <use href="/goit-advancedjs-final-project/assets/icons-c00b452e.svg#youtube"></use>
       </svg>
@@ -186,8 +187,8 @@
   <div class="daily-excercise">
     <span class="icon-weight circle-icon"></span>
     <div>
-      <h3 class="excercise-title">110 min</h3>
-      <h3 class="excercise-sub">Daily norm of sports</h3>
+      <h4 class="excercise-title">110 min</h4>
+      <h5 class="excercise-sub">Daily norm of sports</h5>
       <p class="excercise-text">
         The World Health Organization recommends at least 150 minutes of moderate-intensity aerobic physical activity
         throughout the week for adults aged 18-64. However, what happens if we adjust that number to 110 minutes every
@@ -211,10 +212,10 @@
 
     <ul class="menu-nav-container js-menu-link">
       <li class="menu-nav-item">
-        <a href="./index.html" class="menu-nav-link">Home</a>
+        <a href="./index.html" class="menu-nav-link" aria-label="home button">Home</a>
       </li>
       <li class="menu-nav-item">
-        <a href="./favorites.html" class="menu-nav-link">Favorites</a>
+        <a href="./favorites.html" class="menu-nav-link" aria-label="favorites button">Favorites</a>
       </li>
     </ul>
 
