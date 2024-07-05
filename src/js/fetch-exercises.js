@@ -4,6 +4,7 @@ import { constants } from './constants';
 import { createExerciseMarkup } from './exercise-card-markup';
 import { createPagination } from './create-pagination';
 import { showSearchForm } from './show-search-form';
+import { showToast } from './toast';
 
 export async function fetchExercises(params) {
   const category =
@@ -74,6 +75,6 @@ export async function fetchExercises(params) {
       'Sorry, the exercises information was not retrieved from the server. Please refresh the page'
     );
   } finally {
-    loader.style.display = 'none';
+     loader.style.display = 'none';
   }
 }
