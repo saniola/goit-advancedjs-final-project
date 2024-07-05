@@ -4,6 +4,7 @@ import { fetchCategories } from './fetch-categories';
 import { handleFiltersClick } from './handle-filters-click';
 import { fetchExercises } from './fetch-exercises';
 import { openModal } from './exercise-modal';
+import { initIconPathObserver } from './icon-path-updater';
 
 import { setExerciseTitle } from './set-exercise-title';
 import './handle-email-form';
@@ -13,19 +14,20 @@ const content = document.querySelector('.content');
 const filterTabs = document.querySelector('.list-filter-exersises');
 
 const filter = 'Muscles';
-let page = 1;
+const page = 1;
 let catValue = '';
 
 document.addEventListener('DOMContentLoaded', async () => {
+  initIconPathObserver();
+  loader.style.display = 'none';
 
-  const method = fetchCategories;
   fetchAndSetQuote();
   // if (isExcercisesPage) {
   //   method = fetchExcercises;
   // }
-  handleFiltersClick(method);
+  handleFiltersClick(fetchCategories);
 
-  const totalPages = await method({
+  const totalPages = await fetchCategories({
     filter,
     page,
   });
