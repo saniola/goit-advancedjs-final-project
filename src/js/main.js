@@ -4,6 +4,8 @@ import { fetchCategories } from './fetch-categories';
 import { handleFiltersClick } from './handle-filters-click';
 import { fetchExercises } from './fetch-exercises';
 import { openModal } from './exercise-modal';
+
+import { setExerciseTitle } from './set-exercise-title';
 import './handle-email-form';
 
 const searchForm = document.querySelector('.form-search-exersises');
@@ -13,10 +15,8 @@ const filterTabs = document.querySelector('.list-filter-exersises');
 const filter = 'Muscles';
 let page = 1;
 let catValue = '';
-let keyword = '';
 
 document.addEventListener('DOMContentLoaded', async () => {
-
   const method = fetchCategories;
   fetchAndSetQuote();
   // if (isExcercisesPage) {
@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     page,
   });
 
-
   if (totalPages > 1) {
     createPagination({
       params: { filter, page },
@@ -41,37 +40,42 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 searchForm.addEventListener('submit', async e => {
   e.preventDefault();
-  const input = e.target.querySelector('.input-search-exersises');
-  keyword = input.value;
 
-  const category = document.querySelector('.btn-filter.active').dataset.exercise
-
-  const totalPages = await fetchExercises({
-    [category]: catValue,
-    category,
-    keyword,
+  await fetchExercises({
+    value: catValue,
     page,
   });
+  attachExerciseModalListeners();
+});
+
+searchForm.addEventListener('reset', async e => {
+  e.preventDefault();
+  e.target.querySelector('.input-search-exersises').value = '';
+
+  await fetchExercises({
+    value: catValue,
+    page,
+  });
+  attachExerciseModalListeners();
 });
 
 content.addEventListener('click', async e => {
   const item = e.target.closest('.category-wrap');
   if (!item) return;
-  searchForm.classList.remove('is-hide');
-  catValue = item.getAttribute('name');
-  const category = document.querySelector('.btn-filter.active').dataset.exercise;
 
-  const totalPages = await fetchExercises({
-    [category]: catValue,
-    category,
-    keyword,
+  catValue = item.getAttribute('name');
+  setExerciseTitle(catValue);
+  await fetchExercises({
+    value: catValue,
     page,
   });
-   attachExerciseModalListeners()
+  attachExerciseModalListeners();
 });
 
 function attachExerciseModalListeners() {
-  const modalExerciseInfoButtons = document.querySelectorAll('.modal-exercise-info');
+  const modalExerciseInfoButtons = document.querySelectorAll(
+    '.modal-exercise-info'
+  );
   modalExerciseInfoButtons.forEach(button => {
     button.addEventListener('click', () => {
       openModal(button.id);
