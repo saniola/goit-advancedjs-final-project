@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,12 +15,17 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load ="partials/header.html" />
+    <load data-url="partials/header.html" />
 
     <section class="favorites">
-      <load ="partials/favorites.html" />
+      <div class="container">
+        <div class="main-layout">
+          <load data-url="partials/favorites.html" />
+          <load data-url="partials/daily-sport.html" />
+        </div>
+      </div>
     </section>
-    <load ="partials/mobile-menu.html" />
+    <load data-url="partials/mobile-menu.html" />
 
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/mobile-menu.js"></script>

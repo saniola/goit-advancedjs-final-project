@@ -15,20 +15,19 @@ const loader = document.querySelector('.loader-start');
 loader.style.display = 'block';
 
 const filter = 'Muscles';
-let page = 1;
+const page = 1;
 let catValue = '';
 
 document.addEventListener('DOMContentLoaded', async () => {
   loader.style.display = 'none';
 
-  const method = fetchCategories;
   fetchAndSetQuote();
   // if (isExcercisesPage) {
   //   method = fetchExcercises;
   // }
-  handleFiltersClick(method);
+  handleFiltersClick(fetchCategories);
 
-  const totalPages = await method({
+  const totalPages = await fetchCategories({
     filter,
     page,
   });
@@ -73,13 +72,14 @@ content.addEventListener('click', async e => {
   catValue = item.getAttribute('name');
   const category = document.querySelector('.btn-filter.active').dataset.exercise;
 
-  const totalPages = await fetchExercises({
-    [category]: catValue,
-    category,
-    keyword,
-    page,
-  });
-  attachExerciseModalListeners();
+catValue = item.getAttribute('name');
+setExerciseTitle(catValue);
+await fetchExercises({
+  value: catValue,
+  page,
+});
+attachExerciseModalListeners();
+
 });
 
 document.querySelector('.toggle-btn-home').classList.add('active');
