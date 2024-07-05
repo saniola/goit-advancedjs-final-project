@@ -4,7 +4,6 @@ import { createExerciseMarkup } from './exercise-card-markup';
 import { createPagination } from './create-pagination';
 
 export async function fetchFavorites(params) {
-  const param = params ? params : { page: 1 };
   const { data } = await axios({
     method: 'get',
     url: `${constants.domen}/exercises?page=1&limit=10000`,
@@ -14,25 +13,15 @@ export async function fetchFavorites(params) {
   const exersises = data.results;
   const favorites = JSON.parse(localStorage.getItem(constants.FAV_KEY)) ?? [];
   if (exersises && favorites && favorites.length) {
-    const filteredExersises = exersises.filter(item =>
-      favorites.includes(item._id)
-    );
-     const start = param && param.page ? (parseInt(param.page) - 1) * perPage : 0;
+    const filteredExersises = exersises.filter(item => favorites.includes(item._id));
+    const start = params && params.page ? (parseInt(params.page) - 1) * perPage : 0;
     const slicedExercises = filteredExersises.slice(start, start + perPage);
-    document.querySelector('.content').innerHTML = createExerciseMarkup(
-      slicedExercises,
-      true
-    );
-
+    document.querySelector('.content').innerHTML = createExerciseMarkup(slicedExercises, true);
     document.querySelector('.pagination').innerHTML = '';
-
-    const totalPages =
-      filteredExersises.length > perPage
-        ? Math.ceil(filteredExersises.length / perPage)
-        : 1;
+    const totalPages = filteredExersises.length > perPage ? Math.ceil(filteredExersises.length / perPage) : 1;
     if (totalPages > 1) {
       createPagination({
-        params: param,
+        params: params,
         totalPages: totalPages,
         method: fetchFavorites,
       });
