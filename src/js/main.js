@@ -4,6 +4,7 @@ import { fetchCategories } from './fetch-categories';
 import { handleFiltersClick } from './handle-filters-click';
 import { fetchExercises } from './fetch-exercises';
 import { openModal } from './exercise-modal';
+import { calcScrollValue } from './scroll-to-top';
 
 import { setExerciseTitle } from './set-exercise-title';
 import './handle-email-form';
@@ -82,3 +83,6 @@ function attachExerciseModalListeners() {
     });
   });
 }
+
+window.onscroll = calcScrollValue;
+window.onload = calcScrollValue;
