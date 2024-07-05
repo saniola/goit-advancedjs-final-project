@@ -10,12 +10,13 @@ export async function openModal(exerciseId) {
   let exerciseData;
   try {
     exerciseData = await fetchExercise(exerciseId);
+    renderModal(exerciseData);
+    addCloseButtonListener();
+    initFavoritesButton();  
   } catch (error) {
     console.error('Error fetching exercise data:', error);
   }
-  renderModal(exerciseData);
-  addCloseButtonListener();
-  initFavoritesButton();  
+  
 }
 
 function renderModal(exerciseData) {
@@ -58,6 +59,7 @@ function hideModal() {
 }
 
 function addCloseButtonListener() {
+  closeButton.addEventListener('click', hideModal);
   closeButton.addEventListener('click', hideModal);
 }
 
