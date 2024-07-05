@@ -67,9 +67,7 @@ export function createPagination({ params, totalPages, method }) {
 
   if (page + 3 === totalPages) {
     buttons += `
-      <button class="button${
-        totalPages === page ? ' active' : ''
-      }" data-page="${totalPages}">
+      <button class="button${totalPages == page ? ' active' : ''}" data-page="${totalPages}">
         ${totalPages}
       </button>
     `;
@@ -81,9 +79,7 @@ export function createPagination({ params, totalPages, method }) {
       `;
 
     buttons += `
-      <button class="button${
-        totalPages === page ? ' active' : ''
-      }" data-page="${totalPages}">
+      <button class="button${totalPages === page ? ' active' : ''}" data-page="${totalPages}">
         ${totalPages}
       </button>
     `;
