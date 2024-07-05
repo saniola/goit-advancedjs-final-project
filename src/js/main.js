@@ -14,6 +14,8 @@ const searchForm = document.querySelector('.form-search-exersises');
 const content = document.querySelector('.content');
 const filterTabs = document.querySelector('.list-filter-exersises');
 const scrollProgress = document.querySelector('.scroll-to-top');
+const loader = document.querySelector('.loader-start');
+loader.style.display = 'block';
 
 const filter = 'Muscles';
 const page = 1;
@@ -24,9 +26,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   loader.style.display = 'none';
 
   fetchAndSetQuote();
-  // if (isExcercisesPage) {
-  //   method = fetchExcercises;
-  // }
   handleFiltersClick(fetchCategories);
 
   const totalPages = await fetchCategories({
@@ -43,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-searchForm.addEventListener('submit', async e => {
+searchForm?.addEventListener('submit', async e => {
   e.preventDefault();
 
   const category = document.querySelector('.btn-filter.active').dataset.exercise;
@@ -57,7 +56,7 @@ searchForm.addEventListener('submit', async e => {
   attachExerciseModalListeners();
 });
 
-searchForm.addEventListener('reset', async e => {
+searchForm?.addEventListener('reset', async e => {
   e.preventDefault();
   e.target.querySelector('.input-search-exersises').value = '';
   await fetchExercises({
@@ -67,20 +66,23 @@ searchForm.addEventListener('reset', async e => {
   attachExerciseModalListeners();
 });
 
-content.addEventListener('click', async e => {
+content?.addEventListener('click', async e => {
   const item = e.target.closest('.category-wrap');
   if (!item) return;
   searchForm.classList.remove('is-hide');
   catValue = item.getAttribute('name');
-  const category = document.querySelector('.btn-filter.active').dataset.exercise;
 
-catValue = item.getAttribute('name');
-setExerciseTitle(catValue);
-await fetchExercises({
-  value: catValue,
-  page,
-});
-attachExerciseModalListeners();
+  setExerciseTitle(catValue);
+  await fetchExercises({
+    value: catValue,
+    page,
+  });
+  attachExerciseModalListeners();
+  if (window.innerWidth < 768) {
+    document
+      .querySelector('.filter-title')
+      .scrollIntoView({ behavior: 'smooth' });
+  }
 
 });
 
