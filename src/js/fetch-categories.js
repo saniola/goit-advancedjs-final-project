@@ -6,6 +6,8 @@ import { showToast } from './toast';
 export async function fetchCategories(params) {
   let filterParams = '?';
   const content = document.querySelector('.content');
+  const loader = document.querySelector('.loader-text');
+  loader.style.display = 'inline-block';
 
   for (const [key, value] of Object.entries(params)) {
     filterParams += `${key}=${value}&`;
@@ -28,5 +30,7 @@ export async function fetchCategories(params) {
       'Server error',
       'Sorry, the category information was not retrieved from the server. Please refresh the page'
     );
+  } finally {
+    loader.style.display = 'none';
   }
 }

@@ -21,6 +21,8 @@ export async function fetchExercises(params) {
 
   let filterParams = '?';
   const content = document.querySelector('.content');
+  const loader = document.querySelector('.loader-text');
+  loader.style.display = 'block';
 
   for (const [key, value] of Object.entries(params)) {
     filterParams += `${key}=${value}&`;
@@ -72,5 +74,7 @@ export async function fetchExercises(params) {
       'Server error',
       'Sorry, the exercises information was not retrieved from the server. Please refresh the page'
     );
+  } finally {
+     loader.style.display = 'none';
   }
 }
