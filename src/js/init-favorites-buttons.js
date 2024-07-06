@@ -21,7 +21,7 @@ function parseFavoritesData() {
   const modal = document.getElementById('exerciseModal');
   const _id = modal.querySelector('#addFavoritesButton').getAttribute('data-id');
   const name = modal.querySelector('.exercise-header h2').textContent;
-  const rating = parseFloat(modal.querySelector('.rating-value').textContent);
+  const rating = Number(modal.querySelector('.rating-value').textContent);
   const target = modal.querySelector('.exercise-info .details-column:nth-child(1) .details-value').textContent;
   const bodyPart = modal.querySelector('.exercise-info .details-column:nth-child(2) .details-value').textContent;
   const burnedCaloriesText = modal.querySelector('.exercise-info .details-column:nth-child(5) .details-value').textContent;
