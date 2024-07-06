@@ -25,7 +25,6 @@ export async function openModal(exerciseId) {
   popualteSelectors(exerciseData);
   showOverlay();
   addExerciseCloseButtonListener();
-  addFavoritesListener();
   addRatingButtonListener(exerciseId);
   initFavoritesButtons(exerciseId);
   modalOverlayClickListener();
@@ -51,27 +50,6 @@ function hideOverlay() {
 function addExerciseCloseButtonListener() {
   const exerciseCloseBtn = exerciseModal.querySelector('#closeExerciseButton');
   exerciseCloseBtn.addEventListener('click', hideOverlay);
-}
-
-function addToFavorites() {
-  // Add logic to store in localstorage
-  addFavoritesButton.classList.add('hidden');
-  removeFavoritesButton.classList.remove('hidden');
-  addRemoveFavoritesListener();
-}
-
-function removeFromFavorites() {
-  // Add logic to remove from localstorage
-  addFavoritesButton.classList.remove('hidden');
-  removeFavoritesButton.classList.add('hidden');
-}
-
-function addFavoritesListener() {
-  addFavoritesButton.addEventListener('click', addToFavorites);
-}
-
-function addRemoveFavoritesListener() {
-  removeFavoritesButton.addEventListener('click', removeFromFavorites);
 }
 
 function addRatingButtonListener(exerciseId) {
