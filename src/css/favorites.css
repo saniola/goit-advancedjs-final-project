@@ -55,6 +55,11 @@
     grid-column: 1 / -1;
   }
 
+  .favorites .quote-title {
+    width: 574px;
+    max-width: 574px;
+  }
+
   .favorites .photo {
     grid-column: 2;
     grid-row: 2;
@@ -77,6 +82,16 @@
 
   .favorites .daily-sport-section {
     column-gap: 16px;
+    width: 494px;
+  }
+
+  .favorites .quote-title {
+    width: 364px;
+    max-width: 364px;
+  }
+
+  .favorites .quote-text {
+    margin-bottom: 18px;
   }
 
   .favorites .quote-img-favorite-desk {
