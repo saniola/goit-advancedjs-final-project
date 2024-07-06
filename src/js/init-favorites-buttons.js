@@ -19,18 +19,18 @@ export function initFavoritesButtons(exerciseId) {
 
 function parseFavoritesData() {
   const modal = document.getElementById('exerciseModal');
-  const _id = modal.querySelector('#addFavoritesButton').getAttribute('data-id');
-  const name = modal.querySelector('.exercise-header h2').textContent;
-  const rating = Number(modal.querySelector('.rating-value').textContent);
-  const target = modal.querySelector('.exercise-info .details-column:nth-child(1) .details-value').textContent;
-  const bodyPart = modal.querySelector('.exercise-info .details-column:nth-child(2) .details-value').textContent;
-  const burnedCaloriesText = modal.querySelector('.exercise-info .details-column:nth-child(5) .details-value').textContent;
+  const exerciseId = modal.querySelector('.add-favorites-btn').getAttribute('data-id');
+  const name = modal.querySelector('.exercise-title-js').getAttribute('data-value');
+  const rating = Number(modal.querySelector('.rating-value-js').getAttribute('data-value'));
+  const target = modal.querySelector('.details-target-js').getAttribute('data-value');
+  const bodyPart = modal.querySelector('.details-body-part-js').getAttribute('data-value');
+  const burnedCaloriesText = modal.querySelector('.details-burned-calories-js').getAttribute('data-value');
   const burnedCalories = Number(burnedCaloriesText.split('/')[0]);
   const timeText = burnedCaloriesText.split('/')[1];
   const time = Number(timeText.split(' ')[0]);
 
   return {
-      _id,
+      _id: exerciseId,
       name,
       burnedCalories,
       rating,
