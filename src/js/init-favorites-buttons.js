@@ -55,7 +55,7 @@ function addToFavoritesModalListener() {
 
   const data = parseFavoritesData();
   const favoritesRecord = getExerciseDataById(data._id);
-  if (favoritesRecord == null) {
+  if (!favoritesRecord) {
     storeExerciseData(data);
     showRemoveFavoritesButton();
   }
