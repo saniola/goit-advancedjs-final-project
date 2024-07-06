@@ -21,13 +21,13 @@ export async function openModal(exerciseId) {
       message: 'Error fetching exercise data',
     });
   }
-  renderExcerciseModal(exerciseData);
+  await renderExcerciseModal(exerciseData);
   popualteSelectors(exerciseData);
   showOverlay();
   addExerciseCloseButtonListener();
-  addFavoritesListener();
   addRatingButtonListener(exerciseId);
-  initFavoritesButtons();
+  initFavoritesButtons(exerciseId);
+  modalOverlayClickListener();
 }
 
 function popualteSelectors() {
@@ -52,27 +52,6 @@ function addExerciseCloseButtonListener() {
   exerciseCloseBtn.addEventListener('click', hideOverlay);
 }
 
-function addToFavorites() {
-  // Add logic to store in localstorage
-  addFavoritesButton.classList.add('hidden');
-  removeFavoritesButton.classList.remove('hidden');
-  addRemoveFavoritesListener();
-}
-
-function removeFromFavorites() {
-  // Add logic to remove from localstorage
-  addFavoritesButton.classList.remove('hidden');
-  removeFavoritesButton.classList.add('hidden');
-}
-
-function addFavoritesListener() {
-  addFavoritesButton.addEventListener('click', addToFavorites);
-}
-
-function addRemoveFavoritesListener() {
-  removeFavoritesButton.addEventListener('click', removeFromFavorites);
-}
-
 function addRatingButtonListener(exerciseId) {
   addRatingButton.addEventListener('click', () => showRatingModal(exerciseId));
 }
@@ -80,4 +59,13 @@ function addRatingButtonListener(exerciseId) {
 function showRatingModal(exerciseId) {
   exerciseModal.classList.add('hidden');
   initRatingForm(exerciseId);
+}
+
+function modalOverlayClickListener() {
+  modalOverlay.addEventListener('click', event => {
+    if (event.target === modalOverlay) {
+      modalOverlay.querySelector('#exerciseModal').remove();
+      modalOverlay.classList.add('hidden');
+    }
+  });
 }
