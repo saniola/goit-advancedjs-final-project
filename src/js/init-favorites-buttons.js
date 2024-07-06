@@ -30,13 +30,13 @@ function parseFavoritesData() {
   const time = Number(timeText.split(' ')[0]);
 
   return {
-      _id: exerciseId,
-      name,
-      burnedCalories,
-      rating,
-      target,
-      time,
-      bodyPart
+    _id: exerciseId,
+    name,
+    burnedCalories,
+    rating,
+    target,
+    time,
+    bodyPart,
   };
 }
 
@@ -52,7 +52,6 @@ function getExerciseDataById(id) {
 }
 
 function addToFavoritesModalListener() {
-
   const data = parseFavoritesData();
   const favoritesRecord = getExerciseDataById(data._id);
   if (!favoritesRecord) {

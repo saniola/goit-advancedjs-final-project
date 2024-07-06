@@ -27,7 +27,7 @@ export async function openModal(exerciseId) {
   addExerciseCloseButtonListener();
   addFavoritesListener();
   addRatingButtonListener(exerciseId);
-  initFavoritesButtons(exerciseId); 
+  initFavoritesButtons(exerciseId);
   modalOverlayClickListener();
 }
 
@@ -84,7 +84,7 @@ function showRatingModal(exerciseId) {
 }
 
 function modalOverlayClickListener() {
-  modalOverlay.addEventListener('click', (event) => {
+  modalOverlay.addEventListener('click', event => {
     if (event.target === modalOverlay) {
       modalOverlay.querySelector('#exerciseModal').remove();
       modalOverlay.classList.add('hidden');

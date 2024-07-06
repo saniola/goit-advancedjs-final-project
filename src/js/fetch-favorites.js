@@ -4,7 +4,7 @@ import { createPagination } from './create-pagination';
 import { attachExerciseModalListeners, attachRemoveFavoriteListeners } from './modal-listener';
 
 export function fetchFavorites(params) {
-  const perPage = window.innerWidth > 1280 ? 10000 : (window.innerWidth < 768 ? 8 : 10);
+  const perPage = window.innerWidth > 1280 ? 10000 : window.innerWidth < 768 ? 8 : 10;
   const favoritesMap = JSON.parse(localStorage.getItem(constants.FAV_KEY)) ?? [];
   const exercises = Object.values(favoritesMap);
   if (exercises && exercises.length) {
@@ -23,7 +23,8 @@ export function fetchFavorites(params) {
     attachExerciseModalListeners();
     attachRemoveFavoriteListeners();
   } else {
-    document.querySelector('.content').innerHTML = 'It appears that you haven\'t added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.';
+    document.querySelector('.content').innerHTML =
+      "It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.";
     document.querySelector('.pagination').innerHTML = '';
   }
 }
