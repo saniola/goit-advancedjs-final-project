@@ -7,13 +7,13 @@ export async function handleFiltersClick(method) {
 
   filterButtons.forEach(button => {
     button.addEventListener('click', async () => {
-      const searchForm = document.querySelector('.form-search-exersises');
-      searchForm.elements['search'].value = '';
-      searchForm.classList.remove('is-hide');
-      showSearchForm(false);
-      setExerciseTitle('');
-
       if (!button.classList.contains('active')) {
+        const searchForm = document.querySelector('.form-search-exersises');
+        searchForm.elements['search'].value = '';
+        searchForm.classList.remove('is-hide');
+        showSearchForm(false);
+        setExerciseTitle('');
+
         filterButtons.forEach(button => button.classList.remove('active'));
         button.classList.add('active');
 
