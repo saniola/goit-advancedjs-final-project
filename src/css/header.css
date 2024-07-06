@@ -1,20 +1,3 @@
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--primary-light-color);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 400;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 1440px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 .header {
   padding: 20px 0;
   display: block; /* placeholder */
@@ -41,7 +24,7 @@ body {
 }
 
 .menu-toggle .icon-x {
-  color: var(--primary-light-color)
+  color: var(--primary-light-color);
 }
 
 .menu-toggle .line {
@@ -76,7 +59,9 @@ body {
   width: 32px;
   height: 32px;
   fill: var(--primary-light-color);
-  transition: transform 0.3s ease, fill 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    fill 0.3s ease;
 }
 
 .nav {
@@ -103,7 +88,9 @@ body {
   font-size: 16px;
   border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   gap: 10px;
   font-size: 16px;
   line-height: 1.5;
@@ -143,7 +130,9 @@ body {
   width: 44px;
   height: 44px;
   border: 1px solid rgba(36, 36, 36, 0.1);
-  transition: background-color 0.4s, transform 0.2s;
+  transition:
+    background-color 0.4s,
+    transform 0.2s;
 }
 
 .header .social-icon {
@@ -215,7 +204,9 @@ body {
   justify-content: space-between;
   background-color: var(--primary-dark-color);
   transform: translateX(100%);
-  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+  transition:
+    transform 250ms ease-in-out,
+    opacity 250ms ease-in-out;
   opacity: 0; /* Початковий стан прозорості */
   padding: 248px 0 20px;
 }
@@ -257,7 +248,9 @@ body {
 }
 
 .menu-container .menu-nav-container:hover {
-  transition: background-color 0.4s, transform 0.2s;
+  transition:
+    background-color 0.4s,
+    transform 0.2s;
 }
 
 .menu-container .menu-nav-link {
@@ -280,7 +273,9 @@ body {
   width: 44px;
   height: 44px;
   border: 1px solid rgba(244, 244, 244, 0.1);
-  transition: background-color 0.4s, transform 0.2s;
+  transition:
+    background-color 0.4s,
+    transform 0.2s;
   border-radius: 10px;
 }
 
