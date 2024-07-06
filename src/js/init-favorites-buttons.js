@@ -72,6 +72,9 @@ function removeFromFavoritesModalListner() {
     localStorage.setItem('favorites', JSON.stringify(favorites));
     showAddFavoritesButton();
   }
+  if (currentPageIsFavorites()) {
+    fetchFavorites({ page: 1 });
+  }
 }
 
 export function removeFromFavorites(event) {
