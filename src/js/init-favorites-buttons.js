@@ -27,7 +27,7 @@ function parseFavoritesData() {
   const burnedCaloriesText = modal.querySelector('.exercise-info .details-column:nth-child(5) .details-value').textContent;
   const burnedCalories = Number(burnedCaloriesText.split('/')[0]);
   const timeText = burnedCaloriesText.split('/')[1];
-  const time = parseInt(timeText.split(' ')[0]);
+  const time = Number(timeText.split(' ')[0]);
 
   return {
       _id,
