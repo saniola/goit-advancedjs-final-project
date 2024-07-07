@@ -1,3 +1,5 @@
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+
 (() => {
   const mobileMenu = document.querySelector('.js-menu-container');
   const overlay = document.querySelector('.js-mobile-overlay');
@@ -7,19 +9,19 @@
   const openMenu = () => {
     mobileMenu.classList.add('is-opening');
     overlay.classList.remove('hidden');
-    bodyScrollLock.disableBodyScroll(mobileMenu);
+    disableBodyScroll(mobileMenu);
 
     setTimeout(() => {
       mobileMenu.classList.add('is-open');
       mobileMenu.classList.remove('is-opening');
-    }, 250);
+    }, 50);
   };
 
   const closeMenu = () => {
     mobileMenu.classList.add('is-closing');
     setTimeout(() => {
       mobileMenu.classList.remove('is-open', 'is-closing');
-      bodyScrollLock.enableBodyScroll(mobileMenu);
+      enableBodyScroll(mobileMenu);
       overlay.classList.add('hidden');
     }, 250);
   };
