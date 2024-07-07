@@ -82,13 +82,12 @@ searchForm?.addEventListener('reset', async e => {
 
 content?.addEventListener('click', async e => {
   const item = e.target.closest('.category-wrap');
-  const breadcrumb = document.querySelector('.breadcrumb');
   if (!item) return;
   searchForm.classList.remove('is-hide');
   catValue = item.getAttribute('name');
 
   setExerciseTitle(catValue);
-  breadcrumb.classList.add('clickable');
+  breadcrumb?.classList.add('clickable');
   await fetchExercises({
     value: catValue,
     page,
