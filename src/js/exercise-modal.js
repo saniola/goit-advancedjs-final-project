@@ -27,7 +27,8 @@ export async function openModal(exerciseId) {
   addExerciseCloseButtonListener();
   addRatingButtonListener(exerciseId);
   initFavoritesButtons(exerciseId);
-  modalOverlayClickListener();
+  addModalOverlayClickListener();
+  addEscapeKeyListener();
 }
 
 function popualteSelectors() {
@@ -44,9 +45,11 @@ function showOverlay() {
 }
 
 function hideOverlay() {
-  modalOverlay.classList.add('hidden');
   document.getElementById('exerciseModal').remove();
   document.body.classList.remove('modal-open');
+  modalOverlay.classList.add('hidden');
+  document.removeEventListener('keydown', escapeKeyListener);
+  modalOverlay.removeEventListener('click', modalOverlayClickHandler);
 }
 
 function addExerciseCloseButtonListener() {
@@ -63,10 +66,22 @@ function showRatingModal(exerciseId) {
   initRatingForm(exerciseId);
 }
 
-function modalOverlayClickListener() {
-  modalOverlay.addEventListener('click', event => {
-    if (event.target === modalOverlay) {
-      hideOverlay();
-    }
-  });
+function addModalOverlayClickListener() {
+  modalOverlay.addEventListener('click', modalOverlayClickHandler);
+}
+
+function modalOverlayClickHandler(event) {
+  if (event.target === modalOverlay) {
+    hideOverlay();
+  }
+}
+
+function addEscapeKeyListener() {
+  document.addEventListener('keydown', escapeKeyListener);
+}
+
+function escapeKeyListener(event) {
+  if (event.key === 'Escape') {
+    hideOverlay();
+  }
 }
