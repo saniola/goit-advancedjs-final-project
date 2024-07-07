@@ -74,7 +74,7 @@ function removeFromFavoritesModalListner() {
     delete favorites[exerciseId];
     localStorage.setItem('favorites', JSON.stringify(favorites));
     showAddFavoritesButton();
-    displayMessage('info', exerciseName, 'removed from favroites');
+    displayMessage('info', exerciseName, 'Removed from favorites');
   }
   if (currentPageIsFavorites()) {
     fetchFavorites({ page: 1 });
