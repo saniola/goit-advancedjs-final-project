@@ -112,7 +112,7 @@ function getLocalStorageFavorites() {
 function displayMessage(type, title, message) {
   showToast({
     type,
-    title: title ? title : '',
+    title: title || '',
     message,
   });
 }
