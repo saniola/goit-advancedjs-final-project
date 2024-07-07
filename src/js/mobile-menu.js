@@ -5,10 +5,13 @@
   const closeMenuBtn = document.querySelector('.js-close-menu');
 
   const openMenu = () => {
-    mobileMenu.classList.add('is-open');
+    mobileMenu.classList.add('is-opening');
     overlay.classList.remove('hidden');
+    bodyScrollLock.disableBodyScroll(mobileMenu);
+
     setTimeout(() => {
-      mobileMenu.classList.remove('is-closing');
+      mobileMenu.classList.add('is-open');
+      mobileMenu.classList.remove('is-opening');
     }, 250);
   };
 
@@ -16,6 +19,7 @@
     mobileMenu.classList.add('is-closing');
     setTimeout(() => {
       mobileMenu.classList.remove('is-open', 'is-closing');
+      bodyScrollLock.enableBodyScroll(mobileMenu);
       overlay.classList.add('hidden');
     }, 250);
   };
