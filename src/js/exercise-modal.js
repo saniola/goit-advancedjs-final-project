@@ -40,11 +40,13 @@ function popualteSelectors() {
 
 function showOverlay() {
   modalOverlay.classList.remove('hidden');
+  document.body.classList.add('modal-open');
 }
 
 function hideOverlay() {
   modalOverlay.classList.add('hidden');
   document.getElementById('exerciseModal').remove();
+  document.body.classList.remove('modal-open');
 }
 
 function addExerciseCloseButtonListener() {
@@ -64,8 +66,7 @@ function showRatingModal(exerciseId) {
 function modalOverlayClickListener() {
   modalOverlay.addEventListener('click', event => {
     if (event.target === modalOverlay) {
-      modalOverlay.querySelector('#exerciseModal').remove();
-      modalOverlay.classList.add('hidden');
+      hideOverlay();
     }
   });
 }
