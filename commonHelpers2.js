@@ -1,4 +1,4 @@
-import{c as b,s as n,b as h,d as x,e as P,f as $}from"./assets/fetch-and-set-quote-4188eff5.js";import{a as g}from"./assets/vendor-032df744.js";const k=e=>e.map(({filter:t="Not found",name:r="Not found",imgURL:s})=>`<div class="category-wrap" name="${r}">
+import{c as b,s as n,b as h,d as x,e as P,f as $}from"./assets/fetch-and-set-quote-79a0c793.js";import{a as g}from"./assets/vendor-032df744.js";const k=e=>e.map(({filter:t="Not found",name:r="Not found",imgURL:s})=>`<div class="category-wrap" name="${r}">
       <img class="category-img" src="${s}" alt="${r}" loading="lazy">
       <div class="category-text-wrap">
           <p class="category-title">${r}</p>
