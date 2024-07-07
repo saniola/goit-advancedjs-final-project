@@ -45,7 +45,7 @@ function storeExerciseData(exerciseData) {
   let favorites = getLocalStorageFavorites();
   favorites[exerciseData._id] = exerciseData;
   localStorage.setItem('favorites', JSON.stringify(favorites));
-  displayMessage('success', exerciseData.name, 'added to favroites');
+  displayMessage('success', exerciseData.name, 'Added to favorites');
 }
 
 function getExerciseDataById(id) {
